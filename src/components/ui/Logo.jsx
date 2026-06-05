@@ -3,7 +3,7 @@
 const Logo = () => {
     return (
         <>
-            <h2 className="font-semibold text-2xl">Md Shakil Ahmed</h2>
+            <h2 className="font-semibold text-lg uppercase">Md Shakil Ahmed</h2>
         </>
     );
 };

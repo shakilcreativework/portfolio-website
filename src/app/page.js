@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Subscribe from "@/components/home/Subscribe";
 
 export default function Home() {
   return (
-    <div className="">
-      <h1>Welcome</h1>
-    </div>
+    <main className="">
+      <Subscribe />
+    </main>
   );
 }
