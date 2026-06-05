@@ -8,7 +8,7 @@ import BaseButton from "../ui/BaseButton";
 import { IoClose } from "react-icons/io5";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
-import { CiGift } from "react-icons/ci";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 
 const Navbar = () => {
@@ -50,9 +50,9 @@ const Navbar = () => {
                     <ul className={`absolute space-y-5 lg:hidden w-full left-0 top-full backdrop-blur-sm bg-background/80 shadow-2xs p-5 flex flex-col
 
                         ${open
-                                ? "opacity-100"
-                                : "opacity-0 pointer-events-none"
-                            }`}>
+                            ? "opacity-100"
+                            : "opacity-0 pointer-events-none"
+                        }`}>
 
                         {/* Loop through navigation links */}
                         {links.map((nav) => (
@@ -69,11 +69,11 @@ const Navbar = () => {
                             </li>
 
                         ))}
-                        <BaseButton className={'md:hidden inline-flex'} text={'Download CV'} />
+                        <BaseButton className={'md:hidden inline-flex'} text={'Download CV'} rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
                     </ul>
                     <div className="flex items-center gap-5">
                         <ThemeSwitch />
-                        <BaseButton className={'hidden md:inline-flex'} text={'Download CV'} />
+                        <BaseButton className={'hidden md:inline-flex'} text={'Download CV'} rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
                         <button
                             aria-label={open ? "Close Menu" : "Open Menu"}
                             aria-expanded={open}
