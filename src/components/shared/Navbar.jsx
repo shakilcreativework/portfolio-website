@@ -9,6 +9,7 @@ import { IoClose } from "react-icons/io5";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 import { MdOutlineFileDownload } from "react-icons/md";
+import Logo from "../ui/Logo";
 
 
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
             <Container>
                 <nav className="flex items-center justify-between">
                     <div>
-                        <h2 className="font-semibold text-2xl">Md Shakil Ahmed</h2>
+                        <Logo />
                     </div>
 
                     {/* for Desktop nav links */}
