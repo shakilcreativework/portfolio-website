@@ -74,7 +74,7 @@ const Navbar = () => {
                     </ul>
                     <div className="flex items-center gap-5">
                         <ThemeSwitch />
-                        <BaseButton className={'hidden md:inline-flex'} text={'Download CV'} rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
+                        <BaseButton animated className={'hidden md:inline-flex'} text={'Download CV'} rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
                         <button
                             aria-label={open ? "Close Menu" : "Open Menu"}
                             aria-expanded={open}
