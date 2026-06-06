@@ -52,7 +52,7 @@ const Subscribe = () => {
                             animatedSpanOne="animate-ping"
                                 type="submit"
                                 className="rounded-none border-t border-border px-6 py-3 sm:border-t-0 sm:border-l"
-                                leftIcon={<IoMdPaperPlane />}
+                                leftIcon={<IoMdPaperPlane className="text-xl" />}
                             >
                                 Subscribe
                             </BaseButton>

@@ -24,7 +24,7 @@ const ContactForm = () => {
     return (
         <div>
             <div
-                className={cn("w-full rounded-[32px] bg-card p-6 border border-border shadow-card sm:p-8")}
+                className={cn("w-full rounded-4xl bg-card p-6 border border-border shadow-card sm:p-8")}
             >
 
                 {/* -------------------------------------------------------------- */}
@@ -126,11 +126,14 @@ const ContactForm = () => {
                                     ⏳
                                 </span>
                             ) : (
-                                <IoMdPaperPlane className="text-2xl" />
+                                <IoMdPaperPlane className="text-xl" />
                             )
                         }
                         aria-label="Create account"
                         disabled={loading}
+                        className="rounded-lg"
+                        animatedSpanOne={'rounded-lg animate-ping'}
+                        animatedSpanTwo={'rounded-lg'}
                     >
 
                         {/* Show loading text while submitting */}

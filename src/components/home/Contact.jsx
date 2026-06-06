@@ -1,22 +1,23 @@
 
 
-import { IoMdPaperPlane } from "react-icons/io";
+import { IoLogoGithub, IoMdPaperPlane } from "react-icons/io";
 import Container from "../shared/Container";
-import { MdOutlineLocationOn } from "react-icons/md";
+import { MdOutlineLocationOn, MdOutlineMarkEmailUnread } from "react-icons/md";
 import ContactForm from "../ui/ContactForm";
+import Link from "next/link";
+import { FaDiscord, FaLinkedinIn } from "react-icons/fa";
 
 const Contact = () => {
     return (
         <section className="py-20">
             <Container>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-14 lg:gap-8 xl:gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-center gap-12 md:gap-14 lg:gap-8 xl:gap-16">
                     <div className="space-y-4 md:col-span-2">
                         <div className="flex items-center gap-2">
                             <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600  animate-pulse"></span>
                             <span className="text-muted ">Open for Freelance Opportunities</span>
                         </div>
                         <h2 className="font-bold text-3xl leading-10">Let&apos;s Build Something <br /> <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text font-bold uppercase text-transparent">Amazing</span> Together</h2>
-                        {/* <p className="text-muted lg:text-lg">Have a project in mind or want to collaborate? <br className="sm:hidden md:inline-flex" /> Feel free to reach out. <br className="hidden sm:inline-flex md:hidden" /> I&apos;m always open to <br className="hidden md:inline-flex" /> discussing new opportunities.</p> */}
                         <p className="text-muted lg:text-lg">Have a project idea or need a developer for your next product?
                             <br className=" sm:inline-flex md:inline-flex lg:hidden xl:inline-flex" /> I&apos;m available for freelance work, collaborations, and full-stack web <br className="hidden sm:inline-flex md:inline-flex lg:hidden xl:inline-flex" /> development projects worldwide.</p>
 
@@ -36,6 +37,28 @@ const Contact = () => {
                                 </div>
                                 <span>Available for freelance work</span>
                             </div>
+                        </div>
+                        <div className="flex gap-5 items-center">
+                            <Link href={'/'} className="hover:text-purple-600 transition">
+                                <div className="w-10 h-10 bg-card flex justify-center items-center shadow-xs">
+                                    <IoLogoGithub className="text-2xl" />
+                                </div>
+                            </Link>
+                            <Link href={'/'} className="hover:text-purple-600 transition">
+                                <div className="w-10 h-10 bg-card flex justify-center items-center shadow-xs">
+                                    <FaLinkedinIn className="text-2xl" />
+                                </div>
+                            </Link>
+                            <Link href={'/'} className="hover:text-purple-600 transition">
+                                <div className="w-10 h-10 bg-card flex justify-center items-center shadow-xs">
+                                    <FaDiscord className="text-2xl" />
+                                </div>
+                            </Link>
+                            <Link href={'/'} className="hover:text-purple-600 transition">
+                                <div className="w-10 h-10 bg-card flex justify-center items-center shadow-xs">
+                                    <MdOutlineMarkEmailUnread className="text-2xl" />
+                                </div>
+                            </Link>
                         </div>
                     </div>
 
