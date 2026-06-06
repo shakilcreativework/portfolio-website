@@ -1,13 +1,16 @@
+
+
 import { IoMdPaperPlane } from "react-icons/io";
 import Container from "../shared/Container";
 import { MdOutlineLocationOn } from "react-icons/md";
+import ContactForm from "../ui/ContactForm";
 
 const Contact = () => {
     return (
         <section className="py-20">
             <Container>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-3">
-                    <div className="space-y-4 col-span-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-14 lg:gap-8 xl:gap-16">
+                    <div className="space-y-4 md:col-span-2">
                         <div className="flex items-center gap-2">
                             <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600  animate-pulse"></span>
                             <span className="text-muted ">Open for Freelance Opportunities</span>
@@ -36,7 +39,9 @@ const Contact = () => {
                         </div>
                     </div>
 
-
+                    <div className="md:col-span-2 lg:col-span-3">
+                        <ContactForm />
+                    </div>
                 </div>
             </Container>
         </section>
