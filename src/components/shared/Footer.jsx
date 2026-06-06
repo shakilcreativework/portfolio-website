@@ -11,7 +11,7 @@ const Footer = () => {
             <Container>
                 <div className="flex flex-col md:flex-row md:justify-between items-center gap-6">
                     <Logo />
-                    <span className="text-xs">&copy; 2026 Md Shakil Ahmed. All rights reserved.</span>
+                    <span className="text-xs">&copy; 2026 Md Shakil Ahmed. Crafted with Next.js, Tailwind CSS, and ❤️.</span>
                     <div className="flex gap-5 items-center">
                         <Link href={'/'} className="">
                             <IoLogoGithub className="text-2xl" />

@@ -6,14 +6,16 @@ const Contact = () => {
     return (
         <section className="py-20">
             <Container>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-3">
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-2 col-span-1">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-3">
+                    <div className="space-y-4 col-span-2">
+                        <div className="flex items-center gap-2 ">
                             <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600"></span>
-                            <span className="text-muted ">Get In Touch</span>
+                            <span className="text-muted ">Available for New Projects</span>
                         </div>
                         <h2 className="font-bold text-3xl">Let&apos;s Work Together</h2>
-                        <p className="text-muted lg:text-lg">Have a project in mind or want to collaborate? <br className="sm:hidden md:inline-flex" /> Feel free to reach out. <br className="hidden sm:inline-flex md:hidden" /> I&apos;m always open to <br className="hidden md:inline-flex" /> discussing new opportunities.</p>
+                        {/* <p className="text-muted lg:text-lg">Have a project in mind or want to collaborate? <br className="sm:hidden md:inline-flex" /> Feel free to reach out. <br className="hidden sm:inline-flex md:hidden" /> I&apos;m always open to <br className="hidden md:inline-flex" /> discussing new opportunities.</p> */}
+                        <p className="text-muted lg:text-lg">Have a project idea or need a developer for your next product?
+                            <br className="hidden sm:inline-flex md:inline-flex lg:hidden xl:inline-flex" /> I&apos;m available for freelance work, collaborations, and full-stack web <br className="hidden sm:inline-flex md:inline-flex lg:hidden xl:inline-flex" /> development projects worldwide.</p>
 
                         <div className="text-muted space-y-4">
                             <span className="flex items-center gap-2 ">
@@ -23,9 +25,9 @@ const Contact = () => {
 
                             <span className="flex items-center gap-2 ">
                                 <MdOutlineLocationOn className="text-purple-600 text-xl" />
-                                Sirajganj, Bangladesh
+                                Sirajganj, Bangladesh • Remote Worldwide
                             </span>
-                            <div className="flex items-center gap-2 col-span-1">
+                            <div className="flex items-center gap-2">
                                 <div className="w-5 h-5 flex justify-center items-center">
                                     <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-green-300 to-green-600"></span>
                                 </div>

@@ -23,15 +23,11 @@ const Subscribe = () => {
 
                         <div>
                             <h2 className="font-jakarta text-xl font-bold leading-tight sm:text-2xl lg:text-3xl">
-                                Stay Inspired, Get Exclusive Deals
+                                Tech Insights & Project Updates
                             </h2>
 
                             <p className="mt-2 text-sm text-muted sm:text-base">
-                                Join our newsletter and get up to{" "}
-                                <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text font-bold uppercase text-transparent">
-                                    15% OFF
-                                </span>{" "}
-                                your next order.
+                                Subscribe to receive updates about my latest projects, articles, and development insights.
                             </p>
                         </div>
                     </div>
