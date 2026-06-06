@@ -6,14 +6,14 @@ const Contact = () => {
     return (
         <section className="py-20">
             <Container>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-3">
                     <div className="space-y-4">
                         <div className="flex items-center gap-2 col-span-1">
                             <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600"></span>
                             <span className="text-muted ">Get In Touch</span>
                         </div>
                         <h2 className="font-bold text-3xl">Let&apos;s Work Together</h2>
-                        <p className="text-muted lg:text-lg">Have a project in mind or want to collaborate? <br /> Feel free to reach out. I&apos;m always open to <br /> discussing new opportunities.</p>
+                        <p className="text-muted lg:text-lg">Have a project in mind or want to collaborate? <br className="sm:hidden md:inline-flex" /> Feel free to reach out. <br className="hidden sm:inline-flex md:hidden" /> I&apos;m always open to <br className="hidden md:inline-flex" /> discussing new opportunities.</p>
 
                         <div className="text-muted space-y-4">
                             <span className="flex items-center gap-2 ">
