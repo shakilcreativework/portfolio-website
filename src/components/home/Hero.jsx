@@ -33,7 +33,7 @@ export default function Hero() {
                     className="relative overflow-hidden py-20 md:py-24"
                 >
                     {/* Background Glow */}
-                    <div className="absolute left-1/2 top-0 h-125 w-125 -translate-x-1/2 rounded-full bg-purple-500/10 blur-[120px]" />
+                    <div className="absolute left-1/2 top-0 h-125 w-125 -translate-x-1/2 rounded-full bg-purple-500/10 blur-[120px] pointer-events-none" />
 
                     <div>
                         <div className="grid items-center gap-16 lg:grid-cols-2">
@@ -163,12 +163,12 @@ export default function Hero() {
 
                                     <div className="absolute flex items-center gap-2 -bottom-5 left-10 rounded-xl border border-white/10 bg-black/60 px-4 py-2 text-sm text-white backdrop-blur-xl">
                                         {/* 🎨 Tailwind CSS */}
-                                        <SiTailwindcss /> Tailwind CSS
+                                        <SiTailwindcss className="text-[#00BCFF]" /> Tailwind CSS
                                     </div>
 
                                     <div className="absolute flex items-center gap-2 bottom-28 sm:bottom-10 -right-3 sm:-right-10 rounded-xl border border-white/10 bg-black/60 px-4 py-2 text-sm text-white backdrop-blur-xl">
                                         {/* 🍃 MongoDB */}
-                                        <SiMongodb /> MongoDB
+                                        <span className="flex justify-center items-center w-5 h-5 rounded-full bg-[#001b29]"><SiMongodb className="text-[#00e360] text-xs" /></span> MongoDB
                                     </div>
                                 </div>
                             </div>
