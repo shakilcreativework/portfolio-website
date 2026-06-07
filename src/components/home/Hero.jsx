@@ -3,25 +3,49 @@
 import Link from "next/link";
 import Container from "../shared/Container";
 import {
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiTailwindcss,
-  SiJavascript,
-  SiTypescript,
-  SiFirebase,
-  SiGithub,
+    SiReact,
+    SiNextdotjs,
+    SiNodedotjs,
+    SiExpress,
+    SiMongodb,
+    SiTailwindcss,
+    SiJavascript,
+    SiTypescript,
+    SiFirebase,
+    SiGithub,
 } from "react-icons/si";
 import Image from "next/image";
+import BaseButton from "../ui/BaseButton";
+import { MdOutlineFileDownload, MdOutlineViewSidebar } from "react-icons/md";
+import { HiMiniViewfinderCircle } from "react-icons/hi2";
+
 
 const technologies = [
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "Node.js",
-    "MongoDB",
+    {
+        name: "React",
+        icon: SiReact,
+        color: "text-[#61DAFB]",
+    },
+    {
+        name: "Next.js",
+        icon: SiNextdotjs,
+        color: "text-foreground",
+    },
+    {
+        name: "Tailwind CSS",
+        icon: SiTailwindcss,
+        color: "text-[#00BCFF]",
+    },
+    {
+        name: "Node.js",
+        icon: SiNodedotjs,
+        color: "text-[#5FA04E]",
+    },
+    {
+        name: "MongoDB",
+        icon: SiMongodb,
+        color: "text-[#47A248]",
+    },
 ];
 
 export default function Hero() {
@@ -30,7 +54,7 @@ export default function Hero() {
             <Container>
                 <div
                     id="home"
-                    className="relative overflow-hidden py-20 md:py-24"
+                    className="relative py-20 md:py-24"
                 >
                     {/* Background Glow */}
                     <div className="absolute left-1/2 top-0 h-125 w-125 -translate-x-1/2 rounded-full bg-purple-500/10 blur-[120px] pointer-events-none" />
@@ -39,29 +63,29 @@ export default function Hero() {
                         <div className="grid items-center gap-16 lg:grid-cols-2">
 
                             {/* Left Content */}
-                            <div className="space-y-8">
+                            <div className="space-y-5">
 
                                 {/* Status */}
-                                <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/10 px-4 py-2 text-sm text-purple-400">
-                                    <span className="h-2 w-2 rounded-full bg-purple-400 animate-pulse" />
+                                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/10 px-4 py-2 text-sm text-purple-600 shadow-xs">
+                                    <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600  animate-pulse"></span>
                                     Open for Freelance Opportunities
                                 </div>
 
                                 {/* Heading */}
                                 <div className="space-y-4">
-                                    <h2 className="text-lg font-medium text-gray-400">
+                                    <h2 className=" font-medium text-muted">
                                         👋 Hi, I&apos;m Shakil
                                     </h2>
 
-                                    <h1 className="max-w-3xl text-5xl font-extrabold leading-tight text-white md:text-7xl">
+                                    <h1 className="max-w-3xl text-5xl font-bold text-foreground md:text-7xl">
                                         Creative{" "}
-                                        <span className="bg-linear-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">
+                                        <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text font-bold text-transparent">
                                             Frontend
                                         </span>{" "}
                                         Developer
                                     </h1>
 
-                                    <p className="max-w-2xl text-lg leading-relaxed text-gray-400">
+                                    <p className="max-w-2xl text-muted">
                                         Building beautiful digital experiences with modern web
                                         technologies. Passionate about creating responsive,
                                         user-friendly, and high-performance applications using React,
@@ -71,31 +95,25 @@ export default function Hero() {
 
                                 {/* Tech Stack */}
                                 <div className="flex flex-wrap gap-3">
-                                    {technologies.map((tech) => (
+                                    {technologies.map(({ name, icon: Icon, color }) => (
                                         <span
-                                            key={tech}
-                                            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300 backdrop-blur-sm transition-all duration-300 hover:border-orange-500/50 hover:bg-orange-500/10 hover:text-white"
+                                            key={name}
+                                            className="inline-flex items-center gap-2 rounded-full border border-border bg-card/5 px-4 py-1.5 text-sm text-muted backdrop-blur-sm transition-all duration-300 hover:border-purple-500/50 hover:bg-surface-hover/10 hover:text-foreground shadow-xs"
                                         >
-                                            {tech}
+                                            <Icon className={`text-base ${color}`} />
+                                            {name}
                                         </span>
                                     ))}
                                 </div>
 
                                 {/* Buttons */}
                                 <div className="flex flex-wrap gap-4">
-                                    <Link
-                                        href="#projects"
-                                        className="rounded-xl bg-linear-to-r from-orange-500 to-pink-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:scale-105"
-                                    >
-                                        View Projects
-                                    </Link>
-
-                                    <Link
-                                        href="/resume.pdf"
-                                        className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10"
-                                    >
-                                        Download CV
-                                    </Link>
+                                    <div>
+                                        <BaseButton animated text={'View Projects'} leftIcon={<HiMiniViewfinderCircle />} />
+                                    </div>
+                                    <div>
+                                        <BaseButton className="hover:bg-transparent" text={'Download CV'} variant="outline" rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
+                                    </div>
                                 </div>
                             </div>
 
