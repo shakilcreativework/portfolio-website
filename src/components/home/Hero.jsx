@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Container from "../shared/Container";
 import {
     SiReact,
@@ -16,8 +15,8 @@ import {
 } from "react-icons/si";
 import Image from "next/image";
 import BaseButton from "../ui/BaseButton";
-import { MdOutlineFileDownload, MdOutlineViewSidebar } from "react-icons/md";
-import { HiMiniViewfinderCircle } from "react-icons/hi2";
+import { MdOutlineFileDownload } from "react-icons/md";
+import { FaFolderOpen } from "react-icons/fa";
 
 
 const technologies = [
@@ -63,7 +62,7 @@ export default function Hero() {
                         <div className="grid items-center gap-16 lg:grid-cols-2">
 
                             {/* Left Content */}
-                            <div className="space-y-5">
+                            <div className="space-y-6">
 
                                 {/* Status */}
                                 <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/10 px-4 py-2 text-sm text-purple-600 shadow-xs">
@@ -107,9 +106,9 @@ export default function Hero() {
                                 </div>
 
                                 {/* Buttons */}
-                                <div className="flex flex-wrap gap-4">
+                                <div className="flex flex-wrap gap-4 mt-12">
                                     <div>
-                                        <BaseButton animated text={'View Projects'} leftIcon={<HiMiniViewfinderCircle />} />
+                                        <BaseButton animated text={'View Projects'} leftIcon={<FaFolderOpen />} />
                                     </div>
                                     <div>
                                         <BaseButton className="hover:bg-transparent" text={'Download CV'} variant="outline" rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
@@ -121,7 +120,7 @@ export default function Hero() {
                             <div className="relative flex items-center justify-center">
 
                                 {/* Main Card */}
-                                <div className="relative max-w-xs sm:max-w-md rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
+                                <div className="relative max-w-xs sm:max-w-md rounded-3xl border border-border bg-card p-6 sm:p-8 backdrop-blur-xl shadow-xs">
 
                                     <div className="space-y-6">
 
@@ -131,37 +130,37 @@ export default function Hero() {
                                             </div>
 
                                             <div>
-                                                <h3 className="text-xl font-bold text-white">
+                                                <h3 className="font-medium text-lg text-foreground">
                                                     Md Shakil Ahmed
                                                 </h3>
-                                                <p className="text-gray-400">
+                                                <p className="text-muted">
                                                     Frontend Developer
                                                 </p>
                                             </div>
                                         </div>
 
-                                        <div className="rounded-2xl bg-black/30 p-4">
-                                            <p className="text-sm text-gray-300">
+                                        <div className="rounded-2xl bg-background shadow-xs p-4">
+                                            <p className="text-sm text-muted">
                                                 Currently building scalable web applications and learning
                                                 full-stack development with modern technologies.
                                             </p>
                                         </div>
 
                                         <div className="grid grid-cols-2 gap-4">
-                                            <div className="rounded-xl bg-black/30 p-4 text-center">
-                                                <h4 className="text-2xl font-bold text-white">
+                                            <div className="rounded-xl bg-background shadow-xs p-4 text-center">
+                                                <h4 className="text-2xl font-bold text-foreground">
                                                     10+
                                                 </h4>
-                                                <p className="text-sm text-gray-400">
+                                                <p className="text-sm text-muted">
                                                     Projects
                                                 </p>
                                             </div>
 
-                                            <div className="rounded-xl bg-black/30 p-4 text-center">
-                                                <h4 className="text-2xl font-bold text-white">
+                                            <div className="rounded-xl bg-background shadow-xs p-4 text-center">
+                                                <h4 className="text-2xl font-bold text-foreground">
                                                     100%
                                                 </h4>
-                                                <p className="text-sm text-gray-400">
+                                                <p className="text-sm text-muted">
                                                     Responsive
                                                 </p>
                                             </div>
@@ -169,24 +168,20 @@ export default function Hero() {
                                     </div>
 
                                     {/* Floating Badges */}
-                                    <div className="absolute flex items-center gap-2 -left-3 sm:-left-8 top-20 sm:top-10 rounded-xl border border-white/10 bg-black/60 px-4 py-2 text-sm text-white backdrop-blur-xl">
-                                        {/* ⚛ React */}
+                                    <div className="absolute flex items-center gap-2 -left-3 sm:-left-8 top-22 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiReact className="text-purple-600" /> React
                                     </div>
 
-                                    <div className="absolute flex items-center gap-2 -right-3 sm:-right-8 -top-4 sm:top-20 rounded-xl border border-white/10 bg-black/60 px-4 py-2 text-sm text-white backdrop-blur-xl">
-                                        {/* ▲ Next.js */}
+                                    <div className="absolute flex items-center gap-2 -right-3 sm:-right-8 -top-4 sm:top-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiNextdotjs /> Next.js
                                     </div>
 
-                                    <div className="absolute flex items-center gap-2 -bottom-5 left-10 rounded-xl border border-white/10 bg-black/60 px-4 py-2 text-sm text-white backdrop-blur-xl">
-                                        {/* 🎨 Tailwind CSS */}
+                                  <div className="absolute flex items-center gap-2 -bottom-5 left-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiTailwindcss className="text-[#00BCFF]" /> Tailwind CSS
                                     </div>
 
-                                    <div className="absolute flex items-center gap-2 bottom-28 sm:bottom-10 -right-3 sm:-right-10 rounded-xl border border-white/10 bg-black/60 px-4 py-2 text-sm text-white backdrop-blur-xl">
-                                        {/* 🍃 MongoDB */}
-                                        <span className="flex justify-center items-center w-5 h-5 rounded-full bg-[#001b29]"><SiMongodb className="text-[#00e360] text-xs" /></span> MongoDB
+                                    <div className="absolute flex items-center gap-2 bottom-28 sm:bottom-10 -right-3 sm:-right-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
+                                        <SiMongodb className="text-[#00e360] text-xs" /> MongoDB
                                     </div>
                                 </div>
                             </div>
