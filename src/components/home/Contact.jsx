@@ -15,9 +15,11 @@ const Contact = () => {
                     <div className="space-y-4 md:col-span-2">
                         <div className="flex items-center gap-2">
                             <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600  animate-pulse"></span>
-                            <span className="text-muted ">Open for Freelance Opportunities</span>
+                            <span className="text-muted ">Have an idea?</span>
+                            {/* <span className="text-muted ">Open for Freelance Opportunities</span> */}
                         </div>
-                        <h2 className="font-bold text-3xl leading-10">Let&apos;s Build Something <br /> <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text font-bold uppercase text-transparent">Amazing</span> Together</h2>
+                        <h2 className="font-bold text-3xl leading-10">Let&apos;s turn it into a <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text font-bold text-transparent">beautiful</span> <br className="hidden sm:inline-flex" /> <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text font-bold uppercase text-transparent">digital</span> experience.</h2>
+                        {/* <h2 className="font-bold text-3xl leading-10">Let&apos;s Build Something <br /> <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text font-bold uppercase text-transparent">Amazing</span> Together</h2> */}
                         <p className="text-muted lg:text-lg">Have a project idea or need a developer for your next product?
                             <br className=" sm:inline-flex md:inline-flex lg:hidden xl:inline-flex" /> I&apos;m available for freelance work, collaborations, and full-stack web <br className="hidden sm:inline-flex md:inline-flex lg:hidden xl:inline-flex" /> development projects worldwide.</p>
 
