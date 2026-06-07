@@ -8,19 +8,10 @@ import { MdOutlineMarkEmailUnread } from "react-icons/md";
 
 const Footer = () => {
     return (
-        <footer className="bg-card py-5">
+        <footer className="bg-card space-y-6 py-5">
             <Container>
                 <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-6">
                     <Logo />
-                    <span className="text-xs">&copy; 2026 Md Shakil Ahmed. Designed & Developed with Next.js, Tailwind CSS, and ❤️.</span>
-                    {/* <div className="flex gap-5 items-center">
-                        <Link href={'/'} className="">
-                            <IoLogoGithub className="text-2xl" />
-                        </Link>
-                        <Link href={'/'} className="">
-                            <FaLinkedinIn className="text-2xl" />
-                        </Link>
-                    </div> */}
                     <div className="flex gap-5 items-center">
                         <Link href={'/'} className="hover:text-purple-600 transition">
                             <div className="w-8 h-8 bg-background flex justify-center items-center shadow-xs">
@@ -45,6 +36,11 @@ const Footer = () => {
                     </div>
                 </div>
             </Container>
+            <hr />
+            {/* copyright */}
+            <div className="flex justify-center items-center">
+                <span className="text-xs">&copy; 2026 Md Shakil Ahmed. Designed & Developed with Next.js, Tailwind CSS, and ❤️.</span>
+            </div>
         </footer>
     );
 };
