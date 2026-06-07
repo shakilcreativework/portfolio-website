@@ -10,7 +10,7 @@ const Footer = () => {
     return (
         <footer className="bg-card py-5">
             <Container>
-                <div className="flex flex-col md:flex-row md:justify-between items-center gap-6">
+                <div className="flex flex-col lg:flex-row lg:justify-between items-center gap-6">
                     <Logo />
                     <span className="text-xs">&copy; 2026 Md Shakil Ahmed. Designed & Developed with Next.js, Tailwind CSS, and ❤️.</span>
                     {/* <div className="flex gap-5 items-center">
