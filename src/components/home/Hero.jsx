@@ -59,7 +59,7 @@ export default function Hero() {
                     <div className="absolute left-1/2 top-0 h-125 w-125 -translate-x-1/2 rounded-full bg-purple-500/10 blur-[120px] pointer-events-none" />
 
                     <div>
-                        <div className="grid items-center gap-16 lg:grid-cols-2">
+                        <div className="grid items-center gap-20 lg:grid-cols-2">
 
                             {/* Left Content */}
                             <div className="space-y-6">
@@ -76,7 +76,7 @@ export default function Hero() {
                                         👋 Hi, I&apos;m Shakil
                                     </h2>
 
-                                    <h1 className="max-w-3xl text-5xl font-bold text-foreground md:text-7xl">
+                                    <h1 className="max-w-3xl text-5xl font-bold text-foreground md:text-5xl lg:text-6xl">
                                         Creative{" "}
                                         <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text font-bold text-transparent">
                                             Frontend
@@ -106,12 +106,12 @@ export default function Hero() {
                                 </div>
 
                                 {/* Buttons */}
-                                <div className="flex flex-wrap gap-4 mt-12">
+                                <div className="flex flex-wrap gap-3 sm:gap-4 mt-12">
                                     <div>
-                                        <BaseButton animated text={'View Projects'} leftIcon={<FaFolderOpen />} />
+                                        <BaseButton className={'px-4 sm:px-5 md:px-6 '} animated text={'View Projects'} leftIcon={<FaFolderOpen />} />
                                     </div>
                                     <div>
-                                        <BaseButton className="hover:bg-transparent" text={'Download CV'} variant="outline" rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
+                                        <BaseButton className="px-4 sm:px-5 md:px-6 hover:bg-transparent" text={'Download CV'} variant="outline" rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
                                     </div>
                                 </div>
                             </div>
@@ -168,11 +168,11 @@ export default function Hero() {
                                     </div>
 
                                     {/* Floating Badges */}
-                                    <div className="absolute flex items-center gap-2 -left-3 sm:-left-8 top-22 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
+                                    <div className="absolute flex items-center gap-2 -left-5 sm:-left-8 top-22 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiReact className="text-purple-600" /> React
                                     </div>
 
-                                    <div className="absolute flex items-center gap-2 -right-3 sm:-right-8 -top-4 sm:top-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
+                                    <div className="absolute flex items-center gap-2 -right-5 sm:-right-8 -top-4 sm:top-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiNextdotjs /> Next.js
                                     </div>
 
@@ -180,7 +180,7 @@ export default function Hero() {
                                         <SiTailwindcss className="text-[#00BCFF]" /> Tailwind CSS
                                     </div>
 
-                                    <div className="absolute flex items-center gap-2 bottom-28 sm:bottom-10 -right-3 sm:-right-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
+                                    <div className="absolute flex items-center gap-2 bottom-28 sm:bottom-10 -right-5 sm:-right-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiMongodb className="text-[#00e360] text-xs" /> MongoDB
                                     </div>
                                 </div>

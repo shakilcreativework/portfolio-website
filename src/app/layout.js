@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen flex flex-col bg-background text-foreground">
         <NextThemeProvider>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 overflow-hidden">{children}</main>
           <Footer />
         </NextThemeProvider>
         {/* <Navbar />
