@@ -33,38 +33,11 @@ const Subscribe = () => {
                             </p>
                         </div>
                     </div>
-
-                    {/* Right Form */}
-                    {/* <div className="w-full lg:max-w-lg">
-                        <form
-                            onSubmit={handleSubscribe}
-                            className="flex flex-col overflow-hidden rounded-xl border border-border bg-background sm:flex-row"
-                        >
-                            <input
-                                type="email"
-                                name="email"
-                                required
-                                autoComplete="email"
-                                placeholder="Enter your email address"
-                                className="w-full flex-1 border-0 bg-transparent px-5 py-3 text-sm outline-none placeholder:text-muted"
-                            />
-
-                            <BaseButton
-                            animated
-                            animatedSpanOne="animate-ping"
-                                type="submit"
-                                className="rounded-none px-6 py-3"
-                                leftIcon={<IoMdPaperPlane className="text-xl" />}
-                            >
-                                Subscribe
-                            </BaseButton>
-                        </form>
-                    </div> */}
                     <div>
                         <BaseButton
                             animated
                             type="submit"
-                            leftIcon={<FaRegClock className="text-xl" />}
+                            leftIcon={<FaRegClock />}
                             text="Start Your Project"
                         />
                     </div>
