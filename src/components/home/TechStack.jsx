@@ -26,32 +26,38 @@ const techSkills = [
       "Building fast, responsive, and modern user interfaces.",
     skills: [
       {
-        name: "React",
-        icon: SiReact,
-        color: "text-[#61DAFB]",
-      },
-      {
-        name: "Next.js",
-        icon: SiNextdotjs,
-        color: "text-foreground",
-      },
-      {
-        name: "JavaScript",
-        icon: SiJavascript,
-        color: "text-[#F7DF1E]",
-      },
-      {
         name: "HTML5",
+        subtitle: "Semantic Markup",
         icon: SiHtml5,
         color: "text-[#E34F26]",
       },
       {
         name: "CSS3",
+        subtitle: "Responsive Design",
         icon: FaCss3Alt,
         color: "text-[#1572B6]",
       },
       {
+        name: "JavaScript",
+        subtitle: "ES6+",
+        icon: SiJavascript,
+        color: "text-[#F7DF1E]",
+      },
+      {
+        name: "React",
+        subtitle: "Component Based",
+        icon: SiReact,
+        color: "text-[#61DAFB]",
+      },
+      {
+        name: "Next.js",
+        subtitle: "Full Stack Framework",
+        icon: SiNextdotjs,
+        color: "text-foreground",
+      },
+      {
         name: "Tailwind CSS",
+        subtitle: "CSS Framework",
         icon: SiTailwindcss,
         color: "text-[#06B6D4]",
       },
@@ -65,21 +71,25 @@ const techSkills = [
     skills: [
       {
         name: "Node.js",
+        subtitle: "Server Runtime",
         icon: SiNodedotjs,
         color: "text-[#5FA04E]",
       },
       {
         name: "Express.js",
+        subtitle: "Web Framework",
         icon: SiExpress,
         color: "text-foreground",
       },
       {
         name: "Better Auth",
+        subtitle: "Authentication",
         icon: MdSecurity,
         color: "text-violet-500",
       },
       {
         name: "Firebase",
+        subtitle: "Backend Platform",
         icon: SiFirebase,
         color: "text-[#FFCA28]",
       },
@@ -89,15 +99,17 @@ const techSkills = [
   {
     title: "Database & Cloud",
     description:
-      "Managing data storage, real-time services, and application scalability.",
+      "Managing data storage and application scalability.",
     skills: [
       {
         name: "MongoDB",
+        subtitle: "NoSQL Database",
         icon: SiMongodb,
         color: "text-[#47A248]",
       },
       {
         name: "Firebase",
+        subtitle: "Cloud Services",
         icon: SiFirebase,
         color: "text-[#FFCA28]",
       },
@@ -107,15 +119,17 @@ const techSkills = [
   {
     title: "Tools & Workflow",
     description:
-      "Collaborative development and project management workflows.",
+      "Version control and modern development workflow.",
     skills: [
       {
         name: "Git",
+        subtitle: "Version Control",
         icon: SiGit,
         color: "text-[#F05032]",
       },
       {
         name: "GitHub",
+        subtitle: "Code Hosting",
         icon: SiGithub,
         color: "text-foreground",
       },
@@ -155,9 +169,9 @@ export default function TechStack() {
           {techSkills.map((category) => (
             <div
               key={category.title}
-              className="group rounded-3xl border border-border bg-card p-7 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/30"
+              className="group rounded-3xl border border-border bg-card p-4 sm:p-7 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/30"
             >
-              <h3 className="text-2xl text-foreground font-semibold">
+              <h3 className="text-2xl font-semibold text-foreground">
                 {category.title}
               </h3>
 
@@ -165,17 +179,26 @@ export default function TechStack() {
                 {category.description}
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 grid grid-cols-2 gap-3 lg:gap-3 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {category.skills.map((skill) => {
                   const Icon = skill.icon;
 
                   return (
                     <div
                       key={skill.name}
-                      className="flex items-center gap-2 rounded-full border border-border bg-background/40 px-4 py-2 text-sm transition-all duration-300 hover:scale-105 hover:border-purple-600/30 hover:bg-transparent"
+                      className="group/skill rounded-2xl border border-border bg-background/30 p-4 sm:p-6 lg:gap-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30"
                     >
-                      <Icon className={`text-base ${skill.color}`} />
-                      <span className="text-muted">{skill.name}</span>
+                      <Icon
+                        className={`mx-auto mb-3 text-4xl ${skill.color}`}
+                      />
+
+                      <h4 className="text-sm font-medium text-foreground">
+                        {skill.name}
+                      </h4>
+
+                      <p className="mt-1 text-xs text-muted">
+                        {skill.subtitle}
+                      </p>
                     </div>
                   );
                 })}

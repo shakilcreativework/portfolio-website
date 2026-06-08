@@ -20,7 +20,7 @@ const Navbar = () => {
         setOpen(!open);
     };
     return (
-        <header className="sticky top-0 z-50 backdrop-blur-lg bg-background/60 py-2.5 lg:shadow-2xs">
+        <header className="sticky top-0 z-50 backdrop-blur-lg bg-background/60 py-3.5 lg:shadow-2xs">
             <Container>
                 <nav className="flex items-center justify-between">
                     <div>
