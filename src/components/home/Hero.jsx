@@ -168,11 +168,11 @@ export default function Hero() {
                                     </div>
 
                                     {/* Floating Badges */}
-                                    <div className="absolute flex items-center gap-2 -left-5 sm:-left-8 top-22 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
+                                    <div className="absolute flex items-center gap-2 -left-3.5 sm:-left-8 top-22.5 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiReact className="text-purple-600" /> React
                                     </div>
 
-                                    <div className="absolute flex items-center gap-2 -right-5 sm:-right-8 -top-4 sm:top-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
+                                    <div className="absolute flex items-center gap-2 -right-3.5 sm:-right-8 -top-4 sm:top-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiNextdotjs /> Next.js
                                     </div>
 
@@ -180,7 +180,7 @@ export default function Hero() {
                                         <SiTailwindcss className="text-[#00BCFF]" /> Tailwind CSS
                                     </div>
 
-                                    <div className="absolute flex items-center gap-2 bottom-28 sm:bottom-10 -right-5 sm:-right-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
+                                    <div className="absolute flex items-center gap-2 bottom-28 sm:bottom-10 -right-3.5 sm:-right-10 rounded-xl text-foreground border border-purple-500/20 bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiMongodb className="text-[#00e360] text-xs" /> MongoDB
                                     </div>
                                 </div>
