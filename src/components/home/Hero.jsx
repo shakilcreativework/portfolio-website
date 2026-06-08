@@ -106,7 +106,7 @@ export default function Hero() {
                                 </div>
 
                                 {/* Buttons */}
-                                <div className="flex flex-wrap gap-3 sm:gap-4 mt-12">
+                                <div className="flex flex-wrap gap-2.5 sm:gap-4 mt-12">
                                     <div>
                                         <BaseButton className={'px-4 sm:px-5 md:px-6 '} animated text={'View Projects'} leftIcon={<FaFolderOpen />} />
                                     </div>
