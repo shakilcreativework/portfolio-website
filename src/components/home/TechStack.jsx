@@ -78,6 +78,11 @@ const techSkills = [
         icon: MdSecurity,
         color: "text-violet-500",
       },
+      {
+        name: "Firebase",
+        icon: SiFirebase,
+        color: "text-[#FFCA28]",
+      },
     ],
   },
 
@@ -127,7 +132,7 @@ export default function TechStack() {
           {/* Status */}
           <div className="flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600  animate-pulse"></span>
-            <span className="text-muted ">Tech Stack</span>
+            <span className="text-muted ">Tech Stack & Skills</span>
             {/* <span className="text-muted ">Open for Freelance Opportunities</span> */}
           </div>
           <h2 className="text-4xl font-bold lg:text-5xl leading-tight">
@@ -144,37 +149,19 @@ export default function TechStack() {
             responsive, <br className="hidden sm:inline-flex" /> scalable, and high-performance digital experiences.
           </p>
         </div>
-        {/* <div className="mx-auto mb-14 max-w-3xl text-center">
-          <span className="inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-4 py-1 text-sm text-orange-400">
-            Tech Stack
-          </span>
-
-          <h2 className="mt-5 text-4xl font-bold md:text-5xl">
-            Technologies I Use to Build
-            <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-              {" "}
-              Modern Web Apps
-            </span>
-          </h2>
-
-          <p className="mt-5 text-muted-foreground">
-            A carefully selected stack of technologies that helps me create
-            responsive, scalable, and high-performance digital experiences.
-          </p>
-        </div> */}
 
         {/* Cards */}
         <div className="grid gap-6 md:grid-cols-2">
           {techSkills.map((category) => (
             <div
               key={category.title}
-              className="group rounded-3xl border border-white/10 bg-card/50 p-7 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/30"
+              className="group rounded-3xl border border-border bg-card p-7 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/30"
             >
-              <h3 className="text-2xl font-semibold">
+              <h3 className="text-2xl text-foreground font-semibold">
                 {category.title}
               </h3>
 
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2 text-muted">
                 {category.description}
               </p>
 
@@ -185,10 +172,10 @@ export default function TechStack() {
                   return (
                     <div
                       key={skill.name}
-                      className="flex items-center gap-2 rounded-full border border-white/10 bg-background/40 px-4 py-2 text-sm transition-all duration-300 hover:scale-105 hover:border-orange-500/30 hover:bg-orange-500/5"
+                      className="flex items-center gap-2 rounded-full border border-border bg-background/40 px-4 py-2 text-sm transition-all duration-300 hover:scale-105 hover:border-purple-600/30 hover:bg-transparent"
                     >
                       <Icon className={`text-base ${skill.color}`} />
-                      <span>{skill.name}</span>
+                      <span className="text-muted">{skill.name}</span>
                     </div>
                   );
                 })}
