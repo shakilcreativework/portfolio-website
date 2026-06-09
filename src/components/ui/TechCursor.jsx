@@ -1,56 +1,62 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-const icons = [
+// 1. Import the icons exactly like your techSkills schema
+import {
+  SiHtml5,
+  SiJavascript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+} from "react-icons/si";
+import { FaCss3Alt } from "react-icons/fa";
+import { MdSecurity } from "react-icons/md";
+
+// 2. Your integrated techSkills data layout structure
+const techSkills = [
   {
-    name: "HTML",
-    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012812/html_xbcdkj.png",
+    title: "Frontend Development",
+    skills: [
+      { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+      { name: "CSS3", icon: FaCss3Alt, color: "#1572B6" },
+      { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" }, // Replaced text-foreground with white hex
+      { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
+    ],
   },
   {
-    name: "CSS",
-    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012862/css_1_irojyc.png",
+    title: "Backend Development",
+    skills: [
+      { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
+      { name: "Express.js", icon: SiExpress, color: "#FFFFFF" }, // Replaced text-foreground with white hex
+      { name: "Better Auth", icon: MdSecurity, color: "#8B5CF6" }, // Replaced text-violet-500 with violet hex
+      { name: "Firebase", icon: SiFirebase, color: "#FFCA28" },
+    ],
   },
   {
-    name: "JavaScript",
-    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012752/js_nocitj.png",
+    title: "Database & Cloud",
+    skills: [
+      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+    ],
   },
   {
-    name: "React",
-    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012941/react_ogt6ny.svg",
-  },
-  {
-    name: "Next.js",
-    src: "https://res.cloudinary.com/dz1fy2tof/image/upload/v1755012973/next_hrodnb.svg",
-  },
-  {
-    name: "Tailwind CSS",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-  },
-  {
-    name: "Git",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-  },
-  {
-    name: "GitHub",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-  },
-  {
-    name: "Node.js",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-  },
-  {
-    name: "Express.js",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-  },
-  {
-    name: "Firebase",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg",
-  },
-  {
-    name: "MongoDB",
-    src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    title: "Tools & Workflow",
+    skills: [
+      { name: "Git", icon: SiGit, color: "#F05032" },
+      { name: "GitHub", icon: SiGithub, color: "#FFFFFF" }, // Replaced text-foreground with white hex
+    ],
   },
 ];
+
+// Flatten the nested categories into a unified list of skills for the cursor canvas
+const extractedIcons = techSkills.flatMap((category) => category.skills);
 
 const TechCursor = () => {
   const canvasRef = useRef(null);
@@ -60,37 +66,63 @@ const TechCursor = () => {
   useEffect(() => {
     let animationFrameId;
 
-    // Preload images safely with CORS clearance
-    const loadImages = async () => {
+    // Converts React-Icon components into standard canvas image resources
+    const convertIconsToImages = async () => {
       techImagesRef.current = await Promise.all(
-        icons.map(({ name, src }) => {
+        extractedIcons.map((skill) => {
           return new Promise((resolve) => {
+            // Create a temporary hidden SVG element to compute the React-Icon vector data
+            const svgNamespace = "http://www.w3.org/2000/svg";
+            const svgElement = document.createElementNS(svgNamespace, "svg");
+            svgElement.setAttribute("width", "32");
+            svgElement.setAttribute("height", "32");
+            svgElement.setAttribute("viewBox", "0 0 24 24");
+            svgElement.setAttribute("fill", skill.color); // Apply the exact color tracking property
+
+            // Grab raw vector paths out of the React Icon configuration reference
+            const iconData = skill.icon({});
+            if (iconData && iconData.props && iconData.props.children) {
+              const children = Array.isArray(iconData.props.children)
+                ? iconData.props.children
+                : [iconData.props.children];
+
+              children.forEach((child) => {
+                if (child.type === "path") {
+                  const path = document.createElementNS(svgNamespace, "path");
+                  Object.keys(child.props).forEach((key) => {
+                    path.setAttribute(key, child.props[key]);
+                  });
+                  svgElement.appendChild(path);
+                }
+              });
+            }
+
+            // Convert raw SVG DOM elements to browser parseable data strings
+            const svgString = new XMLSerializer().serializeToString(svgElement);
+            const svgBlob = new Blob([svgString], { type: "image/svg+xml;charset=utf-8" });
+            const url = URL.createObjectURL(svgBlob);
+
             const img = new Image();
-            img.crossOrigin = "anonymous"; // 🔥 FIX: Allows external CDN images to render on HTML5 Canvas
-            img.src = src;
-            img.onload = () => resolve({ name, src, image: img });
-            img.onerror = () => {
-              console.error(`Failed to load image: ${name}`);
-              resolve(null); // Fallback: don't let one broken image crash everything
+            img.src = url;
+            img.onload = () => {
+              resolve({ name: skill.name, image: img, color: skill.color });
             };
+            img.onerror = () => resolve(null);
           });
-        }),
+        })
       );
-      // Filter out any images that failed to load
       techImagesRef.current = techImagesRef.current.filter(Boolean);
     };
 
-    loadImages().then(() => {
+    convertIconsToImages().then(() => {
       const canvas = canvasRef.current;
       if (!canvas) return;
       const ctx = canvas.getContext("2d");
       if (!ctx) return;
 
-      // Handle setup sizing
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
 
-      // Dynamic resize handler so icons don't warp if window resizes
       const handleResize = () => {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -122,7 +154,7 @@ const TechCursor = () => {
             Math.floor(Math.random() * techImagesRef.current.length)
           ];
 
-        const size = 22 + Math.random() * 8;
+        const size = 24 + Math.random() * 8;
 
         const particle = {
           x: e.clientX,
@@ -141,7 +173,7 @@ const TechCursor = () => {
               this.x - this.size / 2,
               this.y - this.size / 2,
               this.size,
-              this.size,
+              this.size
             );
             ctx.globalAlpha = 1;
           },
@@ -152,7 +184,6 @@ const TechCursor = () => {
 
       window.addEventListener("mousemove", onMove);
 
-      // Clean up everything when component unmounts
       return () => {
         window.removeEventListener("mousemove", onMove);
         window.removeEventListener("resize", handleResize);
