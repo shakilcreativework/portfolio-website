@@ -3,6 +3,7 @@ import "./globals.css";
 import NextThemeProvider from "@/providers/NextThemeProvider";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import TechCursor from "@/components/ui/TechCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen flex flex-col bg-background text-foreground">
         <NextThemeProvider>
           <Navbar />
+          <TechCursor />
           <main className="flex-1 overflow-hidden">{children}</main>
           <Footer />
         </NextThemeProvider>
