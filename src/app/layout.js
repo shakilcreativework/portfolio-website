@@ -3,7 +3,7 @@ import "./globals.css";
 import NextThemeProvider from "@/providers/NextThemeProvider";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
-import TechCursor from "@/components/ui/TechCursor";
+import TechCursor from "@/components/effects/TechCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
