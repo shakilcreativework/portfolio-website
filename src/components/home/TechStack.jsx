@@ -18,7 +18,6 @@ import { FaCss3Alt } from "react-icons/fa";
 import { MdSecurity } from "react-icons/md";
 
 import Container from "@/components/shared/Container";
-import WovenBackground from "../effects/WovenLightHero";
 
 const techSkills = [
   {
@@ -168,7 +167,7 @@ export default function TechStack() {
         {/* Cards */}
         <div className="grid gap-6 md:grid-cols-2">
           {techSkills.map((category) => (
-            <WovenBackground as="div"
+            <div
               key={category.title}
               className="group rounded-3xl border border-border bg-card p-4 sm:p-7 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/30"
             >
@@ -187,7 +186,7 @@ export default function TechStack() {
                   return (
                     <div
                       key={skill.name}
-                      className="group/skill rounded-2xl border border-purple-600/20 bg-background/30 p-4 sm:p-6 lg:gap-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30"
+                      className="group/skill rounded-2xl border border-border bg-background/30 p-4 sm:p-6 lg:gap-3 text-center transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/30"
                     >
                       <Icon
                         className={`mx-auto mb-3 text-4xl ${skill.color}`}
@@ -204,7 +203,7 @@ export default function TechStack() {
                   );
                 })}
               </div>
-            </WovenBackground>
+            </div>
           ))}
         </div>
       </Container>
