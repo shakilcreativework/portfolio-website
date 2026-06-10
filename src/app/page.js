@@ -1,3 +1,4 @@
+// import { WovenLightHero } from "@/components/effects/WovenLightHero";
 import Contact from "@/components/home/Contact";
 import Hero from "@/components/home/Hero";
 import Experience from "@/components/home/Journey";
@@ -7,6 +8,7 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
+      {/* <WovenLightHero /> */}
       <TechStack />
       <Experience />
       <Contact />
