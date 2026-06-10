@@ -108,9 +108,10 @@ const FeaturedProjects = () => {
                                                 priority
                                                 src={project.image}
                                                 alt={project.title}
-                                                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                                                // Removed opacity-80/100, kept clean image with grayscale to color hover switch
+                                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                                             />
-                                            <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent opacity-60"></div>
+                                            {/* Removed absolute gradient overlay completely */}
                                         </div>
 
                                         {/* Content Box - Precise 40% on desktop */}
@@ -166,9 +167,10 @@ const FeaturedProjects = () => {
                                                 priority
                                                 src={project.image}
                                                 alt={project.title}
-                                                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                                                // Removed opacity-80/100, kept clean image with grayscale to color hover switch
+                                                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                                             />
-                                            <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent opacity-60"></div>
+                                            {/* Removed absolute gradient overlay completely */}
                                         </div>
 
                                         <span className="inline-block text-xs font-medium px-3 py-1 text-purple-600 border border-purple-600/30 rounded-full mb-3">
