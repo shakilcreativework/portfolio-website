@@ -76,8 +76,8 @@ const FeaturedProjects = () => {
                             </span>
                         </h2>
                     </div>
-                    <BaseButton 
-                        as='link' 
+                    <BaseButton
+                        as='link'
                         href="/"
                         className="rounded-xl bg-none hover:bg-transparent"
                         variant='outline'
@@ -128,7 +128,7 @@ const FeaturedProjects = () => {
                                             </div>
 
                                             {/* Action Items Footer */}
-                                            <div className="flex items-center justify-between pt-4 border-t border-border mt-auto">
+                                            <div className="flex items-center justify-between pt-4  border-border mt-auto">
                                                 <div className="flex flex-wrap gap-2 max-w-[75%]">
                                                     {project.tags.map((tag, tIndex) => (
                                                         <span
@@ -141,7 +141,7 @@ const FeaturedProjects = () => {
                                                 </div>
                                                 <Link
                                                     href={project.link}
-                                                    className="flex items-center justify-center w-10 h-10 rounded-full bg-background border border-border text-foreground group-hover:bg-background group-hover:text-white group-hover:border-purple-600 transition-all duration-300 shrink-0"
+                                                    className="flex items-center justify-center w-10 h-10 rounded-full bg-background border border-border text-foreground group-hover:bg-background group-hover:text-foreground group-hover:border-purple-600 transition-all duration-300 shrink-0"
                                                 >
                                                     <FiArrowUpRight className="text-lg group-hover:rotate-45 transition-transform duration-300" />
                                                 </Link>
@@ -159,7 +159,7 @@ const FeaturedProjects = () => {
                                     className="group relative flex flex-col justify-between bg-card border border-border rounded-3xl p-6 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/30 hover:shadow-2xl hover:shadow-purple-950/20 lg:col-span-2 col-span-1 md:col-span-1"
                                 >
                                     <div>
-                                        <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden mb-6 bg-background/30 border border-border flex items-center justify-center">
+                                        <div className="relative w-full aspect-4/2.5 rounded-2xl overflow-hidden mb-6 bg-background border border-border flex items-center justify-center">
                                             <Image
                                                 width={500}
                                                 height={300}
@@ -171,11 +171,11 @@ const FeaturedProjects = () => {
                                             <div className="absolute inset-0 bg-linear-to-t from-card via-transparent to-transparent opacity-60"></div>
                                         </div>
 
-                                        <span className="inline-block text-xs font-medium px-3 py-1 bg-purple-500/10 text-purple-400 border border-purple-500/20 rounded-full mb-3">
+                                        <span className="inline-block text-xs font-medium px-3 py-1 text-purple-600 border border-purple-600/30 rounded-full mb-3">
                                             {project.category}
                                         </span>
 
-                                        <h3 className="text-xl font-bold text-foreground mb-2 tracking-wide">
+                                        <h3 className="text-xl font-medium text-foreground mb-2 tracking-wide">
                                             {project.title}
                                         </h3>
 
@@ -184,24 +184,25 @@ const FeaturedProjects = () => {
                                         </p>
                                     </div>
 
-                                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
+
+                                    <div className="flex items-center justify-between mt-auto pt-4  border-border">
                                         <div className="flex flex-wrap gap-2 max-w-[75%]">
                                             {project.tags.map((tag, tIndex) => (
                                                 <span
                                                     key={tIndex}
-                                                    className="text-[11px] font-medium text-muted bg-background/50 border border-border/40 px-2 py-0.5 rounded-md"
+                                                    className="text-[11px] font-medium text-muted bg-background border border-border/40 px-2 py-0.5 rounded-md"
                                                 >
                                                     {tag}
                                                 </span>
                                             ))}
                                         </div>
 
-                                        <a
+                                        <Link
                                             href={project.link}
-                                            className="flex items-center justify-center w-10 h-10 rounded-full bg-background border border-border text-foreground group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-600 transition-all duration-300"
+                                            className="flex items-center justify-center w-10 h-10 rounded-full bg-background border border-border text-foreground group-hover:bg-background group-hover:text-foreground group-hover:border-purple-600 transition-all duration-300"
                                         >
                                             <FiArrowUpRight className="text-lg group-hover:rotate-45 transition-transform duration-300" />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             );
