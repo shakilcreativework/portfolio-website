@@ -2,20 +2,29 @@
 
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
+// Import Timer directly if your version exposes it on the THREE namespace or separately
+// Note: In newer Three.js versions, Timer is built right into the core or addons. 
+// If THREE.Timer is undefined in your specific build, you can also import it from 'three/addons/utils/Timer.js'
 
 export default function WovenBackground({
     children,
     className = "",
-    as: Component = "section" // Dynamic HTML tag wrapping context
+    as: Component = "section",
+    particleCount = 50000,   
+    knotRadius = 1.5,        
+    knotTube = 0.5,          
+    opacity = 0.8            
 }) {
     return (
         <Component className={`relative overflow-hidden w-full ${className}`}>
-            {/* The Interactive Three.js Canvas Engine */}
             <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
-                <WovenCanvas />
+                <WovenCanvas 
+                    particleCount={particleCount} 
+                    knotRadius={knotRadius} 
+                    knotTube={knotTube}
+                    opacity={opacity}
+                />
             </div>
-
-            {/* Content Container ensures content stacks perfectly above the z-0 canvas */}
             <div className="relative z-10 w-full h-full">
                 {children}
             </div>
@@ -23,8 +32,7 @@ export default function WovenBackground({
     );
 }
 
-// --- Self-Contained Three.js Particle Engine ---
-const WovenCanvas = () => {
+const WovenCanvas = ({ particleCount, knotRadius, knotTube, opacity }) => {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -43,19 +51,20 @@ const WovenCanvas = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     currentMount.appendChild(renderer.domElement);
 
-    const mouse = new THREE.Vector2(-999, -999); // Start off-screen so particles don't jump on load
-    const clock = new THREE.Clock();
+    const mouse = new THREE.Vector2(-999, -999); 
+    
+    // FIXED: Changed from THREE.Clock() to THREE.Timer()
+    const timer = new THREE.Timer(); 
+    
     const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    // --- Woven Silk Particles Config ---
-    const particleCount = 50000;
     const positions = new Float32Array(particleCount * 3);
     const originalPositions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const velocities = new Float32Array(particleCount * 3);
 
     const geometry = new THREE.BufferGeometry();
-    const torusKnot = new THREE.TorusKnotGeometry(1.5, 0.5, 200, 32);
+    const torusKnot = new THREE.TorusKnotGeometry(knotRadius, knotTube, 200, 32);
 
     for (let i = 0; i < particleCount; i++) {
         const vertexIndex = i % torusKnot.attributes.position.count;
@@ -85,17 +94,27 @@ const WovenCanvas = () => {
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
     const material = new THREE.PointsMaterial({
-        size: 0.02,
+        size: knotRadius < 1.0 ? 0.012 : 0.018, 
         vertexColors: true,
         blending: isDarkMode ? THREE.NormalBlending : THREE.AdditiveBlending,
         transparent: true,
-        opacity: isDarkMode ? 1.0 : 0.8,
+        opacity: isDarkMode ? opacity : opacity * 0.8,
     });
 
     const points = new THREE.Points(geometry, material);
     scene.add(points);
 
-    // Track mouse coordinates mapped directly relative to this container bounding box
+    const updateMeshScale = (w, h) => {
+        const aspect = w / h;
+        if (aspect > 1) {
+            points.scale.set(1.2, 1.2 / aspect, 1);
+        } else {
+            points.scale.set(1, 1, 1);
+        }
+    };
+    
+    updateMeshScale(width, height);
+
     const handleMouseMove = (event) => {
         const rect = currentMount.getBoundingClientRect();
         mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
@@ -103,7 +122,7 @@ const WovenCanvas = () => {
     };
     
     const handleMouseLeave = () => {
-        mouse.set(-999, -999); // Instantly resets physics when mouse leaves section bounds
+        mouse.set(-999, -999); 
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -113,10 +132,16 @@ const WovenCanvas = () => {
 
     const animate = () => {
         animationFrameId = requestAnimationFrame(animate);
-        const elapsedTime = clock.getElapsedTime();
         
-        // Tuned: Scaled coordinate matching vectors to minimize cursor projection offset gaps
-        const mouseWorld = new THREE.Vector3(mouse.x * 4.5, mouse.y * 3.0, 0);
+        // FIXED: Advance the timer instance forward manually on every layout frame tick
+        timer.update(); 
+        const elapsedTime = timer.getElapsed(); 
+
+        const mouseWorld = new THREE.Vector3(
+            mouse.x * (4.5 * points.scale.x), 
+            mouse.y * (3.0 * points.scale.y), 
+            0
+        );
 
         for (let i = 0; i < particleCount; i++) {
             const ix = i * 3;
@@ -129,17 +154,14 @@ const WovenCanvas = () => {
 
             const dist = currentPos.distanceTo(mouseWorld);
             if (dist < 1.3) {
-                // Tuned: Boosted force and velocity multipliers for high visual kickback
                 const force = (1.3 - dist) * 0.08;
                 const direction = new THREE.Vector3().subVectors(currentPos, mouseWorld).normalize();
                 velocity.add(direction.multiplyScalar(force));
             }
 
-            // Tuned: Snappy structural rubber banding force
             const returnForce = new THREE.Vector3().subVectors(originalPos, currentPos).multiplyScalar(0.008);
             velocity.add(returnForce);
             
-            // Tuned: Snappy damping weight removes drag lag effects
             velocity.multiplyScalar(0.88);
 
             positions[ix] += velocity.x;
@@ -163,6 +185,7 @@ const WovenCanvas = () => {
             camera.aspect = newWidth / newHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(newWidth, newHeight);
+            updateMeshScale(newWidth, newHeight);
         }
     });
     resizeObserver.observe(currentMount);
@@ -183,7 +206,7 @@ const WovenCanvas = () => {
         material.dispose();
         renderer.dispose();
     };
-  }, []);
+  }, [particleCount, knotRadius, knotTube, opacity]); 
 
   return <div ref={mountRef} className="absolute inset-0 w-full h-full" />;
 };
