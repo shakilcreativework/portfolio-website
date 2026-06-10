@@ -1,5 +1,6 @@
-// import { WovenLightHero } from "@/components/effects/WovenLightHero";
+
 import Contact from "@/components/home/Contact";
+import FeaturedProjects from "@/components/home/FeaturedProjects";
 import Hero from "@/components/home/Hero";
 import Experience from "@/components/home/Journey";
 import TechStack from "@/components/home/TechStack";
@@ -8,7 +9,7 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-      {/* <WovenLightHero /> */}
+      <FeaturedProjects />
       <TechStack />
       <Experience />
       <Contact />
