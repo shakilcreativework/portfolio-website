@@ -1,6 +1,5 @@
 "use client";
 
-import ShaderBackground from "../effects/ShaderBackground";
 import Container from "../shared/Container";
 
 const experiences = [
@@ -87,36 +86,29 @@ export default function Experience() {
                                 </div>
 
                                 {/* Card */}
-                                {/* Card Wrapper Container */}
                                 <div className="pl-10 md:w-1/2 md:pl-0">
-                                    {/* NEW: Clean outer spacing wrapper handles the timeline alignment */}
-                                    <div className={`${index % 2 === 0 ? "md:ml-12" : "md:mr-12"}`}>
+                                    <div
+                                        className={`rounded-3xl border border-border bg-card p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/30 shadow-xs ${index % 2 === 0 ? "md:ml-12" : "md:mr-12"
+                                            }`}
+                                    >
+                                        <h3 className="text-xl font-semibold text-foreground">
+                                            {item.title}
+                                        </h3>
 
-                                        <ShaderBackground
-                                            colorFront="#8B5CF6"
-                                            as="div"
-                                            className="w-full rounded-3xl border border-border bg-card p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/30 shadow-xs"
-                                        >
-                                            <h3 className="text-xl font-semibold text-foreground">
-                                                {item.title}
-                                            </h3>
+                                        <p className="mt-3 text-muted">
+                                            {item.description}
+                                        </p>
 
-                                            <p className="mt-3 text-muted">
-                                                {item.description}
-                                            </p>
-
-                                            <div className="mt-5 flex flex-wrap gap-2">
-                                                {item.skills.map((skill) => (
-                                                    <span
-                                                        key={skill}
-                                                        className="rounded-full border border-border bg-background px-3 py-1 text-xs text-muted shadow-xs"
-                                                    >
-                                                        {skill}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </ShaderBackground>
-
+                                        <div className="mt-5 flex flex-wrap gap-2">
+                                            {item.skills.map((skill) => (
+                                                <span
+                                                    key={skill}
+                                                    className="rounded-full border border-border bg-background px-3 py-1 text-xs text-muted shadow-xs"
+                                                >
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
