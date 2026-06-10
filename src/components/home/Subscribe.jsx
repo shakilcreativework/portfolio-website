@@ -3,45 +3,49 @@
 import { FaEnvelopeOpenText, FaRegClock } from "react-icons/fa";
 import Container from "../shared/Container";
 import BaseButton from "../ui/BaseButton";
-// import { IoMdPaperPlane } from "react-icons/io";
+import ShaderBackground from "../effects/ShaderBackground";
 
 const Subscribe = () => {
-    // const handleSubscribe = (e) => {
-    //     e.preventDefault();
-    //     console.log('Subscribe btn clicked!');
-    // };
-
     return (
         <section className="py-20 md:py-24">
             <Container>
-                <div className="flex flex-col md:flex-row justify-between items-center gap-6 rounded-3xl border border-border bg-card p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between lg:p-8">
-                    {/* Left Content */}
-                    <div className="flex flex-col items-center gap-4 text-center md:flex-row lg:flex-1">
-                        <div className="shrink-0">
-                            <FaEnvelopeOpenText className="text-5xl text-purple-600 sm:text-6xl" />
+                <ShaderBackground
+                    colorFront="#8B5CF6"
+                    as="div"
+                    className="relative overflow-hidden w-full rounded-3xl border border-border bg-card"
+                >
+
+                    {/* NEW FORCED INNER CONTAINER: This bypasses any custom layout logic inside ShaderBackground */}
+                    <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 p-6 sm:p-8 lg:p-10">
+
+                        {/* Left Content Column */}
+                        <div className="flex flex-col items-center text-center gap-4 md:flex-row md:text-left">
+                            <div className="shrink-0 flex items-center justify-center">
+                                <FaEnvelopeOpenText className="text-5xl text-purple-600 sm:text-6xl" />
+                            </div>
+
+                            <div className="space-y-1.5 sm:space-y-2">
+                                <h2 className="text-xl font-bold leading-tight sm:text-2xl lg:text-3xl text-foreground">
+                                    Ready to work together?
+                                </h2>
+                                <p className="text-sm text-muted sm:text-base max-w-md md:max-w-xl">
+                                    Have a project in mind? Let&apos;s discuss how I can help bring it to life.
+                                </p>
+                            </div>
                         </div>
 
-                        <div>
-                            <h2 className="text-xl font-bold leading-tight md:text-start sm:text-2xl lg:text-3xl">
-                                {/* Tech Insights & Project Updates */}
-                                Ready to work together?
-                            </h2>
-
-                            <p className="mt-2 text-sm text-muted sm:text-base">
-                                {/* Subscribe to receive updates about my latest projects, articles, and development insights. */}
-                                Have a project in mind? Let&apos;s discuss how I can help bring it to life.
-                            </p>
+                        {/* Right Content Button Column */}
+                        <div className="w-full md:w-auto flex justify-center md:justify-end items-center shrink-0">
+                            <BaseButton
+                                animated
+                                type="submit"
+                                leftIcon={<FaRegClock />}
+                                text="Start Your Project"
+                            />
                         </div>
+
                     </div>
-                    <div>
-                        <BaseButton
-                            animated
-                            type="submit"
-                            leftIcon={<FaRegClock />}
-                            text="Start Your Project"
-                        />
-                    </div>
-                </div>
+                </ShaderBackground>
             </Container>
         </section>
     );

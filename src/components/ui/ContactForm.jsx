@@ -5,6 +5,7 @@ import BaseButton from "./BaseButton";
 import { IoMdPaperPlane } from "react-icons/io";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import ShaderBackground from "../effects/ShaderBackground";
 
 
 const ContactForm = () => {
@@ -22,9 +23,11 @@ const ContactForm = () => {
     };
 
     return (
-        <div>
-            <div
-                className={cn("w-full rounded-4xl bg-card p-6 border border-border shadow-card sm:p-8")}
+        <section>
+            <ShaderBackground
+                colorFront="#8B5CF6"
+                as="div"
+                className={cn("w-full rounded-4xl bg-card p-6 border border-border hover:border-purple-600/30 shadow-card sm:p-8")}
             >
 
                 {/* -------------------------------------------------------------- */}
@@ -38,14 +41,14 @@ const ContactForm = () => {
                             aria-label="Your Name"
                             isRequired
                             name="name"
-                            className="w-full"
+                            className="w-full "
                         >
 
                             <Input
                                 placeholder="Your Name"
                                 className={cn(
                                     "w-full rounded-lg border-0 px-3 py-3",
-                                    "text-sm placeholder:text-muted-foreground",
+                                    "text-sm placeholder:text-muted",
                                     "focus:outline-none focus:ring-0"
                                 )}
                             />
@@ -60,14 +63,14 @@ const ContactForm = () => {
                             isRequired
                             name="email"
                             type="email"
-                            className="w-full"
+                            className="w-full "
                         >
 
                             <Input
                                 placeholder="Your Email"
                                 className={cn(
                                     "w-full rounded-lg border-0 px-3 py-3",
-                                    "text-sm placeholder:text-muted-foreground",
+                                    "text-sm placeholder:text-muted",
                                     "focus:outline-none focus:ring-0"
                                 )}
                             />
@@ -82,14 +85,14 @@ const ContactForm = () => {
                         isRequired
                         name="subject"
                         type="text"
-                        className="w-full"
+                        className="w-full "
                     >
 
                         <Input
                             placeholder="Subject"
                             className={cn(
                                 "w-full rounded-lg border-0 px-3 py-3",
-                                "text-sm placeholder:text-muted-foreground",
+                                "text-sm placeholder:text-muted",
                                 "focus:outline-none focus:ring-0"
                             )}
                         />
@@ -102,14 +105,14 @@ const ContactForm = () => {
                         aria-label="Your Message"
                         isRequired
                         name="message"
-                        className="w-full"
+                        className="w-full "
                     >
                         <TextArea
                             placeholder="Your Message"
                             rows={6}
                             className={cn(
                                 "w-full rounded-lg border-0 px-3 py-3",
-                                "text-sm placeholder:text-muted-foreground",
+                                "text-sm placeholder:text-muted",
                                 "focus:outline-none focus:ring-0"
                             )}
                         />
@@ -141,8 +144,8 @@ const ContactForm = () => {
 
                     </BaseButton>
                 </Form>
-            </div>
-        </div>
+            </ShaderBackground>
+        </section>
     );
 };
 
