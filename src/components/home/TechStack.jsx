@@ -139,7 +139,7 @@ const techSkills = [
 
 export default function TechStack() {
   return (
-    <section id="skills" className="py-24">
+    <section id="skills" className="py-20 md:py-24">
       <Container>
         {/* Header */}
         <div className="space-y-4 mb-10">

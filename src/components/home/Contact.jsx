@@ -9,7 +9,7 @@ import { FaDiscord, FaLinkedinIn } from "react-icons/fa";
 
 const Contact = () => {
     return (
-        <section className="py-20" id="contact">
+        <section className="py-20 md:py-24" id="contact">
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-center gap-12 md:gap-14 lg:gap-8 xl:gap-16">
                     <div className="space-y-4 md:col-span-2">

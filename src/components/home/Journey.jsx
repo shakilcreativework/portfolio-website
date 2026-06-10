@@ -35,7 +35,7 @@ const experiences = [
 
 export default function Experience() {
     return (
-        <section id="journey" className="py-20 lg:py-24">
+        <section id="journey" className="py-20 md:py-24">
             <Container>
 
                 {/* Section Header */}

@@ -66,7 +66,7 @@ const Footer = () => {
     // console.log(links);
 
     return (
-        <footer className="bg-card space-y-6 py-5">
+        <footer className="bg-card space-y-6 py-6">
             <Container>
                 <div className="flex flex-col lg:flex-row gap-6 justify-between items-center">
                     {/* logo */}

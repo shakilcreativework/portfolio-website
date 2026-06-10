@@ -12,7 +12,7 @@ const Subscribe = () => {
     // };
 
     return (
-        <section className="py-20">
+        <section className="py-20 md:py-24">
             <Container>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6 rounded-3xl border border-border bg-card p-5 sm:p-6 lg:flex-row lg:items-center lg:justify-between lg:p-8">
                     {/* Left Content */}
