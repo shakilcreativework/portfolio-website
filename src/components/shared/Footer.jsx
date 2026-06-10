@@ -17,6 +17,7 @@ import {
     SiFirebase,
     SiGithub,
 } from "react-icons/si";
+import ShaderBackground from "../effects/ShaderBackground";
 
 const technologies = [
     {
@@ -66,7 +67,7 @@ const Footer = () => {
     // console.log(links);
 
     return (
-        <footer className="bg-card space-y-6 py-6">
+        <ShaderBackground colorFront="#8B5CF6" as="footer" className="w-full bg-card py-6 mt-auto">
             <Container>
                 <div className="flex flex-col lg:flex-row gap-6 justify-between items-center">
                     {/* logo */}
@@ -97,7 +98,7 @@ const Footer = () => {
                     </div>
                 </div>
             </Container>
-        </footer>
+        </ShaderBackground>
     );
 };
 

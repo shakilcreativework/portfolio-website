@@ -17,6 +17,7 @@ import Image from "next/image";
 import BaseButton from "../ui/BaseButton";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaFolderOpen } from "react-icons/fa";
+import ShaderBackground from "../effects/ShaderBackground";
 
 
 const technologies = [
@@ -49,7 +50,7 @@ const technologies = [
 
 export default function Hero() {
     return (
-        <section>
+        <ShaderBackground colorFront="#8B5CF6">
             <Container>
                 <div
                     id="home"
@@ -189,7 +190,7 @@ export default function Hero() {
                     </div>
                 </div>
             </Container>
-        </section>
+        </ShaderBackground>
     );
 }
 

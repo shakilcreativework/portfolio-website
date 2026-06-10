@@ -10,6 +10,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 import { MdOutlineFileDownload } from "react-icons/md";
 import Logo from "../ui/Logo";
+import ShaderBackground from "../effects/ShaderBackground";
 
 
 const Navbar = () => {
@@ -25,7 +26,7 @@ const Navbar = () => {
     };
 
     return (
-        <header className="sticky top-0 z-50 backdrop-blur-lg bg-background/60 py-3.5 lg:shadow-2xs">
+        <ShaderBackground colorFront="#8B5CF6" className="sticky top-0 z-50 backdrop-blur-lg bg-background/60 py-3.5 lg:shadow-2xs">
             <Container>
                 <nav className="flex items-center justify-between">
                     <div>
@@ -108,7 +109,7 @@ const Navbar = () => {
                     </div>
                 </nav>
             </Container>
-        </header>
+        </ShaderBackground>
     );
 };
 

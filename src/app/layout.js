@@ -37,8 +37,6 @@ export default function RootLayout({ children }) {
           <main className="flex-1 overflow-hidden">{children}</main>
           <Footer />
         </NextThemeProvider>
-        {/* <Navbar />
-        {children} */}
       </body>
     </html>
   );
