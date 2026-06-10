@@ -19,6 +19,11 @@ const Navbar = () => {
     const handleMenu = () => {
         setOpen(!open);
     };
+
+    const handleDownloadCV = () => {
+        setOpen(false);
+    };
+
     return (
         <header className="sticky top-0 z-50 backdrop-blur-lg bg-background/60 py-3.5 lg:shadow-2xs">
             <Container>
@@ -28,7 +33,7 @@ const Navbar = () => {
                     </div>
 
                     {/* for Desktop nav links */}
-                    <ul className="hidden lg:flex gap-4 lg:gap-6 items-center">
+                    <ul className="hidden lg:flex lg:gap-10 items-center">
 
                         {/* Loop through navigation links */}
                         {links.map((nav) => (
@@ -61,6 +66,7 @@ const Navbar = () => {
                             <li key={nav.name}>
 
                                 <Link
+                                    onClick={() => setOpen(false)}
                                     href={nav.path}
                                     className="text-muted text-sm font-medium hover:text-accent w-full block"
                                 >
@@ -70,7 +76,7 @@ const Navbar = () => {
                             </li>
 
                         ))}
-                        <BaseButton animated className={'md:hidden inline-flex'} text={'Download CV'} rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
+                        <BaseButton onClick={handleDownloadCV} animated className={'md:hidden inline-flex'} text={'Download CV'} rightIcon={<MdOutlineFileDownload className="text-2xl" />} />
                     </ul>
                     <div className="flex items-center gap-5">
                         <ThemeSwitch />

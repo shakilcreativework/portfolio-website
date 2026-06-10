@@ -63,7 +63,7 @@ const technologies = [
 
 const Footer = () => {
     const links = navLinks;
-    console.log(links);
+    // console.log(links);
 
     return (
         <footer className="bg-card space-y-6 py-5">
