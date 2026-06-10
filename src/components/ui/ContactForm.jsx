@@ -24,9 +24,7 @@ const ContactForm = () => {
 
     return (
         <section>
-            <ShaderBackground
-                colorFront="#8B5CF6"
-                as="div"
+            <div
                 className={cn("w-full rounded-4xl bg-card p-6 border border-border hover:border-purple-600/30 shadow-card sm:p-8")}
             >
 
@@ -47,7 +45,7 @@ const ContactForm = () => {
                             <Input
                                 placeholder="Your Name"
                                 className={cn(
-                                    "w-full rounded-lg border-0 px-3 py-3",
+                                    "w-full rounded-lg border border-purple-600/20 px-3 py-3",
                                     "text-sm placeholder:text-muted",
                                     "focus:outline-none focus:ring-0"
                                 )}
@@ -69,7 +67,7 @@ const ContactForm = () => {
                             <Input
                                 placeholder="Your Email"
                                 className={cn(
-                                    "w-full rounded-lg border-0 px-3 py-3",
+                                    "w-full rounded-lg border border-purple-600/20 px-3 py-3",
                                     "text-sm placeholder:text-muted",
                                     "focus:outline-none focus:ring-0"
                                 )}
@@ -91,7 +89,7 @@ const ContactForm = () => {
                         <Input
                             placeholder="Subject"
                             className={cn(
-                                "w-full rounded-lg border-0 px-3 py-3",
+                                "w-full rounded-lg border border-purple-600/20 px-3 py-3",
                                 "text-sm placeholder:text-muted",
                                 "focus:outline-none focus:ring-0"
                             )}
@@ -111,7 +109,7 @@ const ContactForm = () => {
                             placeholder="Your Message"
                             rows={6}
                             className={cn(
-                                "w-full rounded-lg border-0 px-3 py-3",
+                                "w-full rounded-lg border border-purple-600/20 px-3 py-3",
                                 "text-sm placeholder:text-muted",
                                 "focus:outline-none focus:ring-0"
                             )}
@@ -144,7 +142,7 @@ const ContactForm = () => {
 
                     </BaseButton>
                 </Form>
-            </ShaderBackground>
+            </div>
         </section>
     );
 };
