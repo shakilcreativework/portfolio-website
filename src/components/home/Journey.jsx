@@ -56,7 +56,7 @@ export default function Experience() {
                 <div className="relative">
 
                     {/* Vertical Line */}
-                    <div className="absolute left-3 top-0 h-full w-px bg-white/10 md:left-1/2 md:-translate-x-1/2" />
+                    <div className="absolute left-3 top-0 h-full w-px bg-border md:left-1/2 md:-translate-x-1/2" />
 
                     <div className="space-y-8">
 
@@ -69,7 +69,7 @@ export default function Experience() {
                                     }`}
                             >
                                 {/* Dot */}
-                                <div className="absolute left-1 top-8 z-10 h-4 w-4 rounded-full border-4 border-purple-500 bg-black md:left-1/2 md:-translate-x-1/2" />
+                                <div className="absolute left-1 top-8 z-10 h-4 w-4 rounded-full border-4 border-purple-600 bg-black md:left-1/2 md:-translate-x-1/2" />
 
                                 {/* Date */}
                                 <div className="pl-10 md:w-1/2 md:pl-0">
@@ -79,7 +79,7 @@ export default function Experience() {
                                             : "md:pl-12"
                                             }`}
                                     >
-                                        <span className="text-sm font-medium text-purple-400">
+                                        <span className="text-sm font-medium text-purple-600">
                                             {item.year}
                                         </span>
                                     </div>
@@ -88,14 +88,14 @@ export default function Experience() {
                                 {/* Card */}
                                 <div className="pl-10 md:w-1/2 md:pl-0">
                                     <div
-                                        className={`rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/30 ${index % 2 === 0 ? "md:ml-12" : "md:mr-12"
+                                        className={`rounded-3xl border border-border bg-card p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-purple-600/30 shadow-xs ${index % 2 === 0 ? "md:ml-12" : "md:mr-12"
                                             }`}
                                     >
-                                        <h3 className="text-xl font-semibold text-white">
+                                        <h3 className="text-xl font-semibold text-foreground">
                                             {item.title}
                                         </h3>
 
-                                        <p className="mt-3 leading-relaxed text-gray-400">
+                                        <p className="mt-3 text-muted">
                                             {item.description}
                                         </p>
 
@@ -103,7 +103,7 @@ export default function Experience() {
                                             {item.skills.map((skill) => (
                                                 <span
                                                     key={skill}
-                                                    className="rounded-full border border-white/10 bg-black/30 px-3 py-1 text-xs text-gray-300"
+                                                    className="rounded-full border border-border bg-background px-3 py-1 text-xs text-muted shadow-xs"
                                                 >
                                                     {skill}
                                                 </span>
