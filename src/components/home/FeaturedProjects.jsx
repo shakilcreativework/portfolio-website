@@ -6,8 +6,7 @@ import Container from '../shared/Container';
 import BaseButton from '../ui/BaseButton';
 import Link from 'next/link';
 
-const FeaturedProjects = () => {
-    // Clean data format without the 'featured' flag. 
+const FeaturedProjects = () => { 
     // If you add pagination, the first 2 items of the *current page* will automatically get the featured style.
     const projects = [
         {
