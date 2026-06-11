@@ -80,7 +80,7 @@ export default function MyStory() {
 
                     <div className="grid gap-8 lg:grid-cols-2">
                         {/* About Card */}
-                        <div className="rounded-3xl border border-white/10 bg-white/3 p-8 backdrop-blur-xl">
+                        <div className="rounded-3xl border border-border bg-card p-8 backdrop-blur-xl">
 
                             <div className="mb-6 flex items-center gap-4">
                                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-r from-orange-500 to-pink-500 text-white">
