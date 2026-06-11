@@ -111,7 +111,7 @@ const FeaturedProjects = () => {
     }, []); // Empty array is completely valid now since PROJECTS_DATA is externalized
 
     return (
-        <section id="journey" className="py-20 md:py-24">
+        <section id="projects" className="py-20 md:py-24">
             <Container>
                 {/* Header Section */}
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-4">
