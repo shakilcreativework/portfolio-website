@@ -81,24 +81,24 @@ export default function MyStory() {
 
                     <div className="grid gap-8 lg:grid-cols-2">
                         {/* About Card */}
-                        <div className="rounded-3xl border border-border bg-card p-8 backdrop-blur-xl shadow-xs">
+                        <div className="flex flex-col justify-between rounded-3xl border border-border bg-card p-4 sm:p-8 backdrop-blur-xl shadow-xs">
 
                             <div className="mb-6 flex items-center gap-4">
-                                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-r from-orange-500 to-pink-500 text-2xl font-bold text-foreground overflow-hidden">
+                                <div className="flex h-16 w-16 items-center shrink-0 aspect-square justify-center rounded-2xl bg-linear-to-r from-orange-500 to-pink-500 text-2xl font-bold text-foreground overflow-hidden">
                                     <Image width={200} height={200} priority className="w-full h-full" src={'https://i.ibb.co.com/KcX3J2dy/386.jpg'} alt="Avatar" />
                                 </div>
 
-                                <div>
+                                <div className="space-y-2">
                                     <h3 className="text-2xl font-bold text-foreground">
                                         About Me
                                     </h3>
-                                    <p className="text-muted">
+                                    <p className="text-muted text-xs sm:text-sm">
                                         Frontend Developer & Digital Creator
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="space-y-5 text-muted">
+                            <div className="space-y-5 text-sm text-muted">
 
                                 <p>
                                     I&apos;m a passionate Frontend Developer focused on
@@ -148,7 +148,7 @@ export default function MyStory() {
                         </div>
 
                         {/* Education */}
-                        <div className="rounded-3xl border border-border bg-card p-8 backdrop-blur-xl shadow-xs">
+                        <div className="rounded-3xl border border-border bg-card p-4 sm:p-8 backdrop-blur-xl shadow-xs">
 
                             <div className="mb-8 flex items-center gap-3">
                                 <HiOutlineAcademicCap
@@ -189,12 +189,12 @@ export default function MyStory() {
                     </div>
 
                     {/* Stats */}
-                    <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+                    <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
 
                         {stats.map((stat) => (
                             <div
                                 key={stat.label}
-                                className="rounded-2xl border border-border bg-background p-6 text-center backdrop-blur-xl shadow-xs"
+                                className="rounded-2xl border border-border bg-background p-4 sm:p-6 text-center backdrop-blur-xl shadow-xs"
                             >
                                 <h3 className="text-2xl font-bold text-foreground">
                                     {stat.value}
