@@ -12,11 +12,12 @@ import {
 } from "react-icons/hi";
 
 import Container from "../shared/Container";
+import Image from "next/image";
 
 const education = [
     {
         title: "B.Sc in Computer Science & Engineering",
-        year: "2025 - Present",
+        year: "2021 - 2024",
         description:
             "Currently pursuing a degree in Computer Science & Engineering with a focus on software development, databases, and modern web technologies.",
     },
@@ -80,25 +81,24 @@ export default function MyStory() {
 
                     <div className="grid gap-8 lg:grid-cols-2">
                         {/* About Card */}
-                        <div className="rounded-3xl border border-border bg-card p-8 backdrop-blur-xl">
+                        <div className="rounded-3xl border border-border bg-card p-8 backdrop-blur-xl shadow-xs">
 
                             <div className="mb-6 flex items-center gap-4">
-                                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-linear-to-r from-orange-500 to-pink-500 text-white">
-                                    <FaLaptopCode size={24} />
+                                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-r from-orange-500 to-pink-500 text-2xl font-bold text-foreground overflow-hidden">
+                                    <Image width={200} height={200} priority className="w-full h-full" src={'https://i.ibb.co.com/KcX3J2dy/386.jpg'} alt="Avatar" />
                                 </div>
 
                                 <div>
-                                    <h3 className="text-2xl font-bold text-white">
+                                    <h3 className="text-2xl font-bold text-foreground">
                                         About Me
                                     </h3>
-
-                                    <p className="text-sm text-gray-400">
+                                    <p className="text-muted">
                                         Frontend Developer & Digital Creator
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="space-y-5 text-gray-300 leading-relaxed">
+                            <div className="space-y-5 text-muted">
 
                                 <p>
                                     I&apos;m a passionate Frontend Developer focused on
@@ -124,23 +124,23 @@ export default function MyStory() {
                             {/* Mini Features */}
                             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
 
-                                <div className="rounded-2xl bg-black/30 p-4 text-center">
+                                <div className="rounded-2xl bg-background p-4 text-center">
                                     <FaCode className="mx-auto mb-2 text-orange-400" />
-                                    <p className="text-sm text-gray-300">
+                                    <p className="text-sm text-muted">
                                         Web Development
                                     </p>
                                 </div>
 
-                                <div className="rounded-2xl bg-black/30 p-4 text-center">
+                                <div className="rounded-2xl bg-background p-4 text-center">
                                     <FaPalette className="mx-auto mb-2 text-purple-400" />
-                                    <p className="text-sm text-gray-300">
+                                    <p className="text-sm text-muted">
                                         Digital Design
                                     </p>
                                 </div>
 
-                                <div className="rounded-2xl bg-black/30 p-4 text-center">
+                                <div className="rounded-2xl bg-background p-4 text-center">
                                     <FaGraduationCap className="mx-auto mb-2 text-green-400" />
-                                    <p className="text-sm text-gray-300">
+                                    <p className="text-sm text-muted">
                                         Continuous Learning
                                     </p>
                                 </div>
@@ -148,15 +148,15 @@ export default function MyStory() {
                         </div>
 
                         {/* Education */}
-                        <div className="rounded-3xl border border-white/10 bg-white/3 p-8 backdrop-blur-xl">
+                        <div className="rounded-3xl border border-border bg-card p-8 backdrop-blur-xl shadow-xs">
 
                             <div className="mb-8 flex items-center gap-3">
                                 <HiOutlineAcademicCap
                                     size={28}
-                                    className="text-purple-400"
+                                    className="text-purple-600"
                                 />
 
-                                <h3 className="text-2xl font-bold text-white">
+                                <h3 className="text-2xl font-bold text-forground">
                                     Education
                                 </h3>
                             </div>
@@ -166,19 +166,20 @@ export default function MyStory() {
                                 {education.map((item) => (
                                     <div
                                         key={item.title}
-                                        className="relative border-l border-purple-500/30 pl-6"
+                                        className="relative border-l-2 border-purple-600/30 pl-6"
                                     >
-                                        <div className="absolute -left-[7px] top-1 h-3 w-3 rounded-full bg-purple-500" />
+                                        {/* Dot */}
+                                        <div className="absolute -left-2 top-0 z-10 h-4 w-4 rounded-full border-4 border-purple-600 bg-background" />
 
-                                        <span className="text-sm font-medium text-purple-400">
+                                        <span className="text-sm font-medium text-purple-600">
                                             {item.year}
                                         </span>
 
-                                        <h4 className="mt-2 text-lg font-semibold text-white">
+                                        <h4 className="mt-2 text-lg font-semibold text-forground">
                                             {item.title}
                                         </h4>
 
-                                        <p className="mt-2 text-sm leading-relaxed text-gray-400">
+                                        <p className="mt-2 text-sm text-muted">
                                             {item.description}
                                         </p>
                                     </div>
@@ -193,13 +194,13 @@ export default function MyStory() {
                         {stats.map((stat) => (
                             <div
                                 key={stat.label}
-                                className="rounded-2xl border border-white/10 bg-white/3 p-6 text-center backdrop-blur-xl"
+                                className="rounded-2xl border border-border bg-background p-6 text-center backdrop-blur-xl shadow-xs"
                             >
-                                <h3 className="text-2xl font-bold text-white">
+                                <h3 className="text-2xl font-bold text-foreground">
                                     {stat.value}
                                 </h3>
 
-                                <p className="mt-2 text-sm text-gray-400">
+                                <p className="mt-2 text-sm text-muted">
                                     {stat.label}
                                 </p>
                             </div>

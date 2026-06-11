@@ -56,7 +56,7 @@ export default function Experience() {
                 <div className="relative">
 
                     {/* Vertical Line */}
-                    <div className="absolute left-3 top-0 h-full w-px bg-border md:left-1/2 md:-translate-x-1/2" />
+                    <div className="absolute left-3 top-0 h-full w-0.5 bg-purple-600/30 md:left-1/2 md:-translate-x-1/2" />
 
                     <div className="space-y-8">
 
