@@ -17,19 +17,19 @@ import Image from "next/image";
 const education = [
     {
         title: "B.Sc in Computer Science & Engineering",
-        year: "2021 - 2024",
+        year: "2020 - 2024",
         description:
             "Currently pursuing a degree in Computer Science & Engineering with a focus on software development, databases, and modern web technologies.",
     },
     {
         title: "Diploma in Computer Science & Technology",
-        year: "2021 - 2025",
+        year: "2015 - 2019",
         description:
             "Built a strong foundation in programming, web development, networking, and software engineering through academic and practical projects.",
     },
     {
         title: "Secondary School Certificate (SSC)",
-        year: "2019 - 2021",
+        year: "2013 - 2015",
         description:
             "Completed secondary education while developing a growing passion for technology, design, and software development.",
     },
