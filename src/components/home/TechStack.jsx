@@ -142,7 +142,7 @@ export default function TechStack() {
     <section id="skills" className="py-20 md:py-24">
       <Container>
         {/* Header */}
-        <div className="space-y-4 mb-10">
+        <div className="space-y-4 mb-10 max-w-3xl">
           {/* Status */}
           <div className="flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600  animate-pulse"></span>
@@ -150,7 +150,7 @@ export default function TechStack() {
             {/* <span className="text-muted ">Open for Freelance Opportunities</span> */}
           </div>
           <h2 className="text-4xl font-bold lg:text-5xl leading-tight">
-            Technologies I Use to <br className="hidden sm:inline-flex" />
+            Technologies I Use to 
             <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
               {" "}
               Build Modern
@@ -160,7 +160,7 @@ export default function TechStack() {
           </h2>
           <p className="mt-5 text-muted">
             A carefully selected stack of technologies that helps me create
-            responsive, <br className="hidden sm:inline-flex" /> scalable, and high-performance digital experiences.
+            responsive, scalable, and high-performance digital experiences.
           </p>
         </div>
 

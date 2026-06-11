@@ -39,7 +39,7 @@ export default function Experience() {
             <Container>
 
                 {/* Section Header */}
-                <div className="space-y-4 mb-20">
+                <div className="space-y-4 mb-20 max-w-3xl">
                     <div className="flex items-center gap-2">
                         <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600  animate-pulse"></span>
                         <span className="text-muted ">My Journey</span>

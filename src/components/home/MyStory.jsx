@@ -58,22 +58,19 @@ export default function MyStory() {
         <section id="about" className="py-24">
             <Container>
                 <div className="space-y-16">
-
-                    {/* Section Header */}
-                    <div className="max-w-3xl">
-                        <span className="mb-4 inline-flex items-center gap-2 text-sm text-purple-400">
-                            <span className="h-2 w-2 rounded-full bg-purple-500" />
-                            My Story & Education
-                        </span>
-
-                        <h2 className="text-4xl font-bold text-white md:text-5xl">
+                    <div className="space-y-4 mb-10 max-w-3xl">
+                        <div className="flex items-center gap-2">
+                            <span className="inline-block h-3 w-3 rounded-full bg-linear-to-r from-purple-300 to-purple-600  animate-pulse"></span>
+                            <span className="text-muted ">My Story & Education</span>
+                            {/* <span className="text-muted ">Open for Freelance Opportunities</span> */}
+                        </div>
+                        <h2 className="text-4xl font-bold lg:text-5xl leading-tight">
                             Developer, Designer &
-                            <span className="bg-linear-to-r from-orange-400 to-pink-500 bg-clip-text text-transparent">
-                                {" "}Digital Creator
+                            <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                                {" "} Digital Creator
                             </span>
                         </h2>
-
-                        <p className="mt-6 max-w-2xl text-gray-400 leading-relaxed">
+                        <p className="mt-5 text-muted">
                             My journey started with creativity and digital design before
                             moving into modern web development. Today, I combine both
                             design thinking and development skills to build engaging,
@@ -82,7 +79,6 @@ export default function MyStory() {
                     </div>
 
                     <div className="grid gap-8 lg:grid-cols-2">
-
                         {/* About Card */}
                         <div className="rounded-3xl border border-white/10 bg-white/3 p-8 backdrop-blur-xl">
 
