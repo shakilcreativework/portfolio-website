@@ -221,7 +221,7 @@ const FeaturedProjects = () => {
                                 key={project.id}
                                 ref={(el) => (cardRefs.current[project.id] = el)}
                                 style={dynamicMobileStyles}
-                                className="group relative flex flex-col bg-card border border-border rounded-3xl p-6 overflow-hidden transition-all duration-300 ease-out lg:col-span-2 col-span-1 md:col-span-1 lg:hover:-translate-y-1 lg:hover:border-purple-600/30 lg:hover:shadow-2xl lg:hover:shadow-purple-950/20 active:scale-[0.99] active:bg-neutral-500/5 lg:!opacity-100 lg:!filter-none lg:!scale-100"
+                                className="group relative flex flex-col bg-card border border-border rounded-3xl p-6 overflow-hidden transition-all duration-300 ease-out lg:col-span-2 col-span-1 md:col-span-1 lg:hover:-translate-y-1 lg:hover:border-purple-600/30 lg:hover:shadow-2xl lg:hover:shadow-purple-950/20 active:scale-[0.99] active:bg-neutral-500/5 lg:opacity-100! lg:filter-none! lg:scale-100!"
                             >
                                 <div className="relative w-full aspect-4/2.5 sm:aspect-4/1.5 md:aspect-4/2.5 rounded-2xl overflow-hidden mb-6 bg-background border border-border flex items-center justify-center shrink-0">
                                     <Image
