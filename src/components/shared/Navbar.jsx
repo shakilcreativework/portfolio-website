@@ -25,10 +25,11 @@ const Navbar = () => {
         setOpen(false);
     };
 
-    // We ONLY need the Intersection Observer to change active colors on scroll!
+    // 1. Intersection Observer to automatically update active state on scroll
     useEffect(() => {
         const sections = links
             .map((link) => {
+                // Extracts the id value (e.g., '#skills' becomes 'skills')
                 const id = link.path.startsWith("#") ? link.path.replace("#", "") : null;
                 return id ? document.getElementById(id) : null;
             })
@@ -36,7 +37,7 @@ const Navbar = () => {
 
         const observerOptions = {
             root: null,
-            rootMargin: "-35% 0px -55% 0px",
+            rootMargin: "-35% 0px -55% 0px", // High-accuracy window zone focal alignment tracker
             threshold: 0,
         };
 
@@ -56,29 +57,53 @@ const Navbar = () => {
         };
     }, [links]);
 
+    // 2. Click handler override for beautiful smooth scrolling action
+    const handleScroll = (e, path) => {
+        if (path.startsWith("#")) {
+            e.preventDefault();
+            const id = path.replace("#", "");
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+                setActiveSection(path);
+                setOpen(false); // Cleanly dismisses mobile menu overlay drawer
+                window.history.pushState(null, "", path);
+            }
+        }
+    };
+
     return (
         <header className="sticky top-0 left-0 w-full z-50 backdrop-blur-lg bg-background/60 lg:shadow-2xs">
-            <ShaderBackground as="div" colorFront="#8B5CF6" className="w-full py-3">
+            <ShaderBackground
+                as="div"
+                colorFront="#8B5CF6"
+                className="w-full py-3"
+            >
                 <Container>
                     <nav>
+                        {/* Main Navbar Row (Logo & Interaction Controls) */}
                         <div className="flex items-center justify-between w-full lg:w-auto">
                             <div>
                                 <Logo />
                             </div>
 
-                            {/* Desktop Links (Lenis handles smooth scroll automatically) */}
+                            {/* Desktop Navigation Links */}
                             <ul className="hidden lg:flex lg:gap-10 items-center">
                                 {links.map((nav) => {
                                     const isActive = activeSection === nav.path;
                                     return (
                                         <li key={nav.name}>
                                             <Link
+                                                onClick={(e) => handleScroll(e, nav.path)}
                                                 href={nav.path}
                                                 className={`text-sm font-medium transition-colors duration-300 relative py-1 block ${
-                                                    isActive ? "text-purple-500 font-semibold" : "text-muted hover:text-accent"
+                                                    isActive
+                                                        ? "text-purple-500 font-semibold"
+                                                        : "text-muted hover:text-accent"
                                                 }`}
                                             >
                                                 {nav.name}
+                                                {/* Animated underscore active status marker line bar */}
                                                 {isActive && (
                                                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-purple-500 to-indigo-500 rounded-full" />
                                                 )}
@@ -98,14 +123,23 @@ const Navbar = () => {
                                     className="block lg:hidden rounded-full bg-card hover:text-accent p-2"
                                 >
                                     <div className="relative w-6 h-6 flex justify-center items-center rounded-full shadow-2xs">
-                                        {open ? <IoClose className="absolute text-xl" /> : <AiOutlineMenu className="absolute text-xl" />}
+                                        {open ? (
+                                            <IoClose className="absolute text-xl" />
+                                        ) : (
+                                            <AiOutlineMenu className="absolute text-xl" />
+                                        )}
                                     </div>
                                 </button>
                             </div>
                         </div>
 
-                        {/* Mobile Links */}
-                        <div className={`grid transition-all duration-300 ease-in-out lg:hidden w-full ${open ? "grid-rows-[1fr] opacity-100 mt-4 pb-2" : "grid-rows-[0fr] opacity-0 pointer-events-none"}`}>
+                        {/* Mobile Collapsible Dropdown Drawer (Using dynamic smooth grid scaling) */}
+                        <div className={`grid transition-all duration-300 ease-in-out lg:hidden w-full
+                            ${open
+                                ? "grid-rows-[1fr] opacity-100 mt-4 pb-2"
+                                : "grid-rows-[0fr] opacity-0 pointer-events-none"
+                            }`}
+                        >
                             <div className="overflow-hidden">
                                 <ul className="space-y-3 flex flex-col pt-2 border-muted/10">
                                     {links.map((nav) => {
@@ -113,10 +147,12 @@ const Navbar = () => {
                                         return (
                                             <li key={nav.name}>
                                                 <Link
-                                                    onClick={() => setOpen(false)} // Just close the drawer, Lenis scrolls!
+                                                    onClick={(e) => handleScroll(e, nav.path)}
                                                     href={nav.path}
                                                     className={`text-sm font-medium transition-all duration-200 w-full block p-2.5 rounded-xl ${
-                                                        isActive ? "bg-purple-500/10 text-purple-400 font-semibold border-l-4 border-purple-500 pl-3" : "text-muted hover:text-accent"
+                                                        isActive
+                                                            ? "bg-purple-500/10 text-purple-400 font-semibold border-l-4 border-purple-500 pl-3"
+                                                            : "text-muted hover:text-accent hover:bg-neutral-500/5"
                                                     }`}
                                                 >
                                                     {nav.name}
@@ -130,6 +166,7 @@ const Navbar = () => {
                                 </ul>
                             </div>
                         </div>
+
                     </nav>
                 </Container>
             </ShaderBackground>
