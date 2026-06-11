@@ -4,7 +4,6 @@ import {
     FaGraduationCap,
     FaCode,
     FaPalette,
-    FaLaptopCode,
 } from "react-icons/fa";
 
 import {
@@ -17,21 +16,21 @@ import Image from "next/image";
 const education = [
     {
         title: "B.Sc in Computer Science & Engineering",
-        year: "2020 - 2024",
+        year: "2019 - 2023",
         description:
-            "Currently pursuing a degree in Computer Science & Engineering with a focus on software development, databases, and modern web technologies.",
+            "Completed a Bachelor's degree in Computer Science & Engineering at European University of Bangladesh. Gained knowledge in software development, programming, databases, algorithms, and modern computing technologies.",
     },
     {
-        title: "Diploma in Computer Science & Technology",
+        title: "Diploma in Engineering",
         year: "2015 - 2019",
         description:
-            "Built a strong foundation in programming, web development, networking, and software engineering through academic and practical projects.",
+            "Completed a Diploma in Engineering at Sirajganj Polytechnic Institute. Developed technical skills through academic coursework, practical training, and hands-on industrial experience.",
     },
     {
         title: "Secondary School Certificate (SSC)",
-        year: "2013 - 2015",
+        year: "2015",
         description:
-            "Completed secondary education while developing a growing passion for technology, design, and software development.",
+            "Completed secondary education with a focus on General Electronics, building a strong foundation in technology, problem-solving, and technical learning.",
     },
 ];
 
