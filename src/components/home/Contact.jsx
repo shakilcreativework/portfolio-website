@@ -5,11 +5,11 @@ import Container from "../shared/Container";
 import { MdOutlineLocationOn, MdOutlineMarkEmailUnread } from "react-icons/md";
 import ContactForm from "../ui/ContactForm";
 import Link from "next/link";
-import { FaDiscord, FaLinkedinIn } from "react-icons/fa";
+import { FaDiscord, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
     return (
-        <section className="py-20 md:py-24" id="contact">
+        <section className="py-20 md:py-24 mb-20 md:mb-24" id="contact">
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-center gap-12 md:gap-14 lg:gap-8 xl:gap-16">
                     <div className="space-y-4 md:col-span-2 max-w-3xl">
@@ -27,6 +27,11 @@ const Contact = () => {
                             <span className="flex items-center gap-2 ">
                                 <IoMdPaperPlane className="text-purple-600 text-xl" />
                                 shakilcreativework@gmail.com
+                            </span>
+
+                            <span className="flex items-center gap-2 ">
+                                <FaWhatsapp className="text-purple-600 text-xl" />
+                                <span className="flex items-center">Whatapp/Phone: +880 1305330393</span>
                             </span>
 
                             <span className="flex items-center gap-2 ">
