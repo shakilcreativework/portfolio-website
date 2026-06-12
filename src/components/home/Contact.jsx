@@ -1,13 +1,29 @@
 
+"use client";
 
-import { IoLogoGithub, IoMdPaperPlane } from "react-icons/io";
+import { IoLogoGithub, IoMdCopy, IoMdPaperPlane } from "react-icons/io";
 import Container from "../shared/Container";
 import { MdOutlineLocationOn, MdOutlineMarkEmailUnread } from "react-icons/md";
 import ContactForm from "../ui/ContactForm";
 import Link from "next/link";
 import { FaDiscord, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 const Contact = () => {
+    const [copied, setCopied] = useState(false);
+    const phoneNumber = "+8801305330393"; // Compressed format for WhatsApp URL
+
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText("+880 1305330393");
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000); // Resets back after 2 seconds
+        } catch (err) {
+            toast.error("Failed to copy text: ", err);
+        }
+    };
+
     return (
         <section className="py-20 md:py-24 mb-20 md:mb-24" id="contact">
             <Container>
@@ -29,10 +45,26 @@ const Contact = () => {
                                 shakilcreativework@gmail.com
                             </span>
 
-                            <span className="flex items-center gap-2 ">
-                                <FaWhatsapp className="text-purple-600 text-xl" />
-                                <span className="flex items-center">Whatapp/Phone: +880 1305330393</span>
-                            </span>
+                            <div className="flex items-center gap-2 group">
+                                <Link
+                                    href={`https://wa.me/${phoneNumber}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 hover:text-purple-600 transition"
+                                >
+                                    <FaWhatsapp className="text-purple-600 text-xl" />
+                                    <span className="flex items-center cursor-pointer">Whatapp/Phone: +880 1305330393</span>
+                                </Link>
+
+                                <button
+                                    onClick={handleCopy}
+                                    title="Copy Phone Number"
+                                    className="hover:text-purple-600 transition p-1 rounded-sm focus:outline-none flex items-center gap-1 text-sm"
+                                >
+                                    <IoMdCopy className="text-lg" />
+                                    {copied && <span className="text-xs text-green-500 animate-fade-in">Copied!</span>}
+                                </button>
+                            </div>
 
                             <span className="flex items-center gap-2 ">
                                 <MdOutlineLocationOn className="text-purple-600 text-xl" />
