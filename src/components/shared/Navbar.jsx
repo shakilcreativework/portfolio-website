@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Container from "./Container";
 import { navLinks } from "@/lib/actions";
-import { ThemeSwitch } from "../ui/ThemeSwitch";
+import { ThemeSwitch } from "./ThemeSwitch";
 import BaseButton from "../ui/BaseButton";
 import { IoClose } from "react-icons/io5";
 import { AiOutlineMenu } from "react-icons/ai";

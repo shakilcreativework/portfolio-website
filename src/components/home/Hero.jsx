@@ -18,6 +18,7 @@ import BaseButton from "../ui/BaseButton";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaFolderOpen } from "react-icons/fa";
 import ShaderBackground from "../effects/ShaderBackground";
+import Typewriter from "../shared/TypeWriter";
 
 
 const technologies = [
@@ -77,12 +78,23 @@ export default function Hero() {
                                         👋 Hi, I&apos;m Shakil
                                     </h2>
 
-                                    <h1 className="max-w-3xl text-5xl font-bold text-foreground md:text-5xl lg:text-6xl">
-                                        Creative{" "}
+                                    <h1 className="max-w-3xl text-4xl font-bold text-foreground">
+                                        Building Modern {" "} <br className="inline-flex sm:hidden" />
                                         <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text font-bold text-transparent">
-                                            Frontend
-                                        </span>{" "}
-                                        Developer
+                                            <Typewriter
+                                                text={[
+                                                    "Web Experiences",
+                                                    "Frontend Solutions",
+                                                    "React Applications",
+                                                    "Next.js Projects",
+                                                    "Digital Products",
+                                                ]}
+                                                speed={80}
+                                                deleteSpeed={40}
+                                                waitTime={2500}
+                                                cursorClassName="text-foreground"
+                                            />
+                                        </span>
                                     </h1>
 
                                     <p className="max-w-2xl text-muted">
@@ -177,7 +189,7 @@ export default function Hero() {
                                         <SiNextdotjs /> Next.js
                                     </div>
 
-                                  <div className="absolute flex items-center gap-2 -bottom-5 left-10 rounded-xl text-foreground border border-border bg-background px-4 py-2 text-sm backdrop-blur-xl">
+                                    <div className="absolute flex items-center gap-2 -bottom-5 left-10 rounded-xl text-foreground border border-border bg-background px-4 py-2 text-sm backdrop-blur-xl">
                                         <SiTailwindcss className="text-[#00BCFF]" /> Tailwind CSS
                                     </div>
 
