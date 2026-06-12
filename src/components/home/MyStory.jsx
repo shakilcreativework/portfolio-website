@@ -40,7 +40,7 @@ const stats = [
         label: "Projects Built",
     },
     {
-        value: "500+",
+        value: "7000+",
         label: "Creative Assets",
     },
     {
@@ -193,7 +193,7 @@ export default function MyStory() {
                         {stats.map((stat) => (
                             <div
                                 key={stat.label}
-                                className="rounded-2xl border border-border bg-background p-4 sm:p-6 text-center backdrop-blur-xl shadow-xs"
+                                className="rounded-2xl border border-border bg-card p-4 sm:p-6 text-center backdrop-blur-xl shadow-xs"
                             >
                                 <h3 className="text-2xl font-bold text-foreground">
                                     {stat.value}
