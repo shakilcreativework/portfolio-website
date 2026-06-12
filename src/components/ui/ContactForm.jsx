@@ -45,7 +45,7 @@ const ContactForm = () => {
                             <Input
                                 placeholder="Your Name"
                                 className={cn(
-                                    "w-full rounded-lg border border-purple-600/20 px-3 py-3",
+                                    "w-full rounded-lg border border-border px-3 py-3",
                                     "text-sm placeholder:text-muted",
                                     "focus:outline-none focus:ring-0"
                                 )}
@@ -67,7 +67,7 @@ const ContactForm = () => {
                             <Input
                                 placeholder="Your Email"
                                 className={cn(
-                                    "w-full rounded-lg border border-purple-600/20 px-3 py-3",
+                                    "w-full rounded-lg border border-border px-3 py-3",
                                     "text-sm placeholder:text-muted",
                                     "focus:outline-none focus:ring-0"
                                 )}
@@ -89,7 +89,7 @@ const ContactForm = () => {
                         <Input
                             placeholder="Subject"
                             className={cn(
-                                "w-full rounded-lg border border-purple-600/20 px-3 py-3",
+                                "w-full rounded-lg border border-border px-3 py-3",
                                 "text-sm placeholder:text-muted",
                                 "focus:outline-none focus:ring-0"
                             )}
@@ -109,7 +109,7 @@ const ContactForm = () => {
                             placeholder="Your Message"
                             rows={6}
                             className={cn(
-                                "w-full rounded-lg border border-purple-600/20 px-3 py-3",
+                                "w-full rounded-lg border border-border px-3 py-3",
                                 "text-sm placeholder:text-muted",
                                 "focus:outline-none focus:ring-0"
                             )}
