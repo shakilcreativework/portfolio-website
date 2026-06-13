@@ -6,6 +6,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import Container from '../shared/Container';
 import BaseButton from '../ui/BaseButton';
 import Link from 'next/link';
+import ProjectPreview from '../ui/ProjectPreview';
 
 // Move static data OUTSIDE the component to avoid dependency array tracking
 const PROJECTS_DATA = [
@@ -15,6 +16,7 @@ const PROJECTS_DATA = [
         category: "E-commerce",
         description: "A modern e-commerce platform with seamless shopping experience and secure payments.",
         tags: ["React", "Node.js", "MongoDB"],
+        // image: "https://i.ibb.co.com/B2t6Lygv/screencapture-localhost-3000-2026-06-10-22-38-15.png",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
         link: "#"
     },
@@ -197,15 +199,8 @@ const FeaturedProjects = () => {
                                 >
                                     <div className={`flex flex-col lg:w-full justify-between gap-6 ${isSecondCard ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
                                         {/* Image Container */}
-                                        <div className="relative w-full lg:w-[60%] aspect-4/2.5 sm:aspect-4/1.5 md:aspect-4/2.5 lg:aspect-4/2 rounded-2xl overflow-hidden bg-background/30 border border-border flex items-center justify-center shrink-0">
-                                            <Image
-                                                width={500}
-                                                height={300}
-                                                priority={index === 0}
-                                                src={project.image}
-                                                alt={project.title}
-                                                className="w-full h-full object-cover transition-all duration-500 ease-out lg:grayscale lg:opacity-75 lg:scale-100 lg:group-hover:grayscale-0 lg:group-hover:scale-105 lg:group-hover:opacity-100"
-                                            />
+                                        <div className="relative w-full lg:w-[60%] aspect-4/2.5 sm:aspect-4/1.5 md:aspect-4/2.5 lg:aspect-4/2 rounded-2xl overflow-hidden flex items-center justify-center shrink-0">
+                                            <ProjectPreview image={project.image} alt={project.title} priority={index === 0} />
                                         </div>
                                         {/* Content Container */}
                                         <div className="flex flex-col justify-between w-full lg:w-[40%] grow">
@@ -223,13 +218,11 @@ const FeaturedProjects = () => {
                                 style={dynamicMobileStyles}
                                 className="group relative flex flex-col bg-card border border-border rounded-3xl p-6 overflow-hidden transition-all duration-300 ease-out lg:col-span-2 col-span-1 md:col-span-1 lg:hover:-translate-y-1 lg:hover:border-purple-600/30 lg:hover:shadow-2xl lg:hover:shadow-purple-950/20 active:scale-[0.99] active:bg-neutral-500/5 lg:opacity-100! lg:filter-none! lg:scale-100!"
                             >
-                                <div className="relative w-full aspect-4/2.5 sm:aspect-4/1.5 md:aspect-4/2.5 rounded-2xl overflow-hidden mb-6 bg-background border border-border flex items-center justify-center shrink-0">
-                                    <Image
-                                        width={500}
-                                        height={300}
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-full object-cover transition-all duration-500 ease-out lg:grayscale lg:opacity-75 lg:scale-100 lg:group-hover:grayscale-0 lg:group-hover:scale-105 lg:group-hover:opacity-100"
+                                <div className="relative w-full aspect-4/2.5 sm:aspect-4/1.5 md:aspect-4/2.5 rounded-2xl overflow-hidden mb-6 flex items-center justify-center shrink-0">
+                                    <ProjectPreview 
+                                        image={project.image} 
+                                        alt={project.title} 
+                                        priority={false} 
                                     />
                                 </div>
                                 <div className="flex flex-col flex-1">
