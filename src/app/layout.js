@@ -15,10 +15,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// metadata
 export const metadata = {
   title: "Md Shakil Ahmed | Frontend Developer",
-  description: "",
+  description: "Welcome to my frontend development portfolio showcasing creative web experiences.",
+  openGraph: {
+    title: "Md Shakil Ahmed | Frontend Developer",
+    description: "Welcome to my frontend development portfolio showcasing creative web experiences.",
+    url: "https://shakilcreativework-portfolio.vercel.app",
+    type: "website",
+    images: [
+      {
+        url: "https://shakilcreativework-portfolio.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Md Shakil Ahmed Portfolio Preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Md Shakil Ahmed | Frontend Developer",
+    description: "Welcome to my frontend development portfolio showcasing creative web experiences.",
+    images: ["https://shakilcreativework-portfolio.vercel.app/og-image.jpg"],
+  },
 };
+
+// Your export default function RootLayout({ children }) ... stays down here unchanged
 
 export default function RootLayout({ children }) {
   return (
