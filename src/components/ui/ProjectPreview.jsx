@@ -44,10 +44,10 @@ export default function ProjectPreview({
     return (
         <motion.div
             transition={{ duration: 0.3 }}
-            className="relative overflow-hidden rounded-2xl shadow-sm w-full h-full bg-background/30 group border border-white/5"
+            className="relative overflow-hidden rounded-t-2xl shadow-sm w-full h-full bg-background/30 group "
         >
             {/* Browser Frame */}
-            <div className="bg-background/80 backdrop-blur border-b border-white/5">
+            <div className="bg-background/80 backdrop-blur">
                 <div className="flex items-center gap-2 px-4 py-3">
                     <div className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
                     <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
@@ -55,7 +55,7 @@ export default function ProjectPreview({
 
                     {/* URL Bar */}
                     {hasLiveWebsite && (
-                        <div className="ml-2 text-[10px] text-muted-foreground bg-background/50 px-2.5 py-0.5 rounded truncate max-w-45">
+                        <div className="ml-2 text-[10px] text-muted-foreground bg-background/50 px-2.5 py-0.5  truncate max-w-45">
                             {website
                                 .replace("https://", "")
                                 .replace("http://", "")
