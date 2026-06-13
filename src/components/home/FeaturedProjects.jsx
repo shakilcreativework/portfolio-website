@@ -16,8 +16,8 @@ const PROJECTS_DATA = [
         category: "E-commerce",
         description: "A modern e-commerce platform with seamless shopping experience and secure payments.",
         tags: ["React", "Node.js", "MongoDB"],
-        // image: "https://i.ibb.co.com/B2t6Lygv/screencapture-localhost-3000-2026-06-10-22-38-15.png",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop",
+        displayUrl: "",
         link: "#"
     },
     {
@@ -27,6 +27,7 @@ const PROJECTS_DATA = [
         description: "AI-powered stock market insights and analytics platform for smart investments.",
         tags: ["React", "Express.js", "MongoDB"],
         image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=500&auto=format&fit=crop",
+        displayUrl: "https://creativedesign-assets.netlify.app",
         link: "#"
     },
     {
@@ -36,6 +37,7 @@ const PROJECTS_DATA = [
         description: "A cybersecurity platform for threat detection and real-time monitoring.",
         tags: ["React", "Node.js", "Socket.io"],
         image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=500&auto=format&fit=crop",
+        displayUrl: "",
         link: "#"
     },
     {
@@ -45,6 +47,7 @@ const PROJECTS_DATA = [
         description: "Pinterest marketing automation tool to boost reach and engagement.",
         tags: ["React", "Tailwind CSS", "Firebase"],
         image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=500&auto=format&fit=crop",
+        displayUrl: "",
         link: "#"
     },
     {
@@ -54,6 +57,7 @@ const PROJECTS_DATA = [
         description: "Creative agency website for a modern digital experience.",
         tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
         image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=500&auto=format&fit=crop",
+        displayUrl: "",
         link: "#"
     }
 ];
@@ -200,7 +204,7 @@ const FeaturedProjects = () => {
                                     <div className={`flex flex-col lg:w-full justify-between gap-6 ${isSecondCard ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
                                         {/* Image Container */}
                                         <div className="relative w-full lg:w-[60%] aspect-4/2.5 sm:aspect-4/1.5 md:aspect-4/2.5 lg:aspect-4/2 rounded-2xl overflow-hidden flex items-center justify-center shrink-0">
-                                            <ProjectPreview image={project.image} alt={project.title} priority={index === 0} />
+                                            <ProjectPreview image={project.image} alt={project.title} priority={index === 0} website={project?.displayUrl} />
                                         </div>
                                         {/* Content Container */}
                                         <div className="flex flex-col justify-between w-full lg:w-[40%] grow">
