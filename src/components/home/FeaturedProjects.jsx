@@ -27,7 +27,7 @@ const PROJECTS_DATA = [
         description: "AI-powered stock market insights and analytics platform for smart investments.",
         tags: ["React", "Express.js", "MongoDB"],
         image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=500&auto=format&fit=crop",
-        displayUrl: "https://creativedesign-assets.netlify.app",
+        displayUrl: "",
         link: "#"
     },
     {
